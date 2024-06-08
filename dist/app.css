@@ -1,0 +1,78 @@
+.header-parent-container {
+  color: #fff;
+  background-color: #161616;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  display: flex;
+  box-shadow: 0 10px 10px -10px #dad8d21a;
+
+  & a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  & .left {
+    align-items: center;
+    gap: 24px;
+    display: flex;
+  }
+
+  & .right {
+    background-color: #deb887;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.homepage-main-container {
+  text-align: center;
+  color: #fff;
+  margin: 48px;
+}
+
+.image-generator-main-container {
+  color: #fff;
+  padding: 24px;
+}
+
+.image-search {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  display: flex;
+
+  & img {
+    width: 300px;
+  }
+}
+
+.history-main-container {
+  color: #fff;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 48px;
+  display: flex;
+}
+
+.history-card {
+  border: 1px solid gray;
+  max-width: 300px;
+  padding: 16px;
+
+  & p {
+    color: #e0dbdb;
+  }
+}
+
+.search-box-input {
+  width: 200px;
+  margin: 16px auto;
+  padding: 4px 8px;
+  display: block;
+}
+/*# sourceMappingURL=app.css.map */
