@@ -1,0 +1,29 @@
+.history-main-container{
+    color: rgb(95, 6, 6);
+    padding: 24px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 24px;
+
+    flex-wrap: wrap;
+}
+
+.history-card{
+    max-width: 300px;
+    border: 1px solid rgb(92, 6, 6);
+    padding: 16px;
+
+    p{
+        color: rgb(113, 90, 90);
+        font-size: small;
+    }
+}
+
+.search-box-input{
+    display: block;
+    width: 200px;
+    margin: 16px auto;
+    padding: 4px 8px;
+
+}

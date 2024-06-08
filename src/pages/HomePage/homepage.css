@@ -1,0 +1,26 @@
+.content{
+    text-align: center;
+    margin: 48px;
+    color: rgb(48, 48, 48);
+    display: block;
+    margin: 20px;
+    width: 600px;
+    padding: 10px;
+    font-size: larger;
+    position: absolute;
+	top: 20%;
+	left: 28%;
+
+    h1{
+        margin-bottom: 10px;
+    }
+    p{
+        margin: 20px;
+    }
+    button{
+        font-size: medium;
+        width: 400px;
+        background-color: rgb(166, 231, 27);
+        text-decoration: none;
+    }
+}

@@ -1,0 +1,34 @@
+.header-parent-container{
+    box-shadow: rgba(218, 216, 210, 0.1) 0px 10px 10px -10px;
+    display: flex;
+    background-color: rgb(145, 207, 0);
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 16px;
+    color: white;
+
+    a{
+        color: white;
+        text-decoration: none;
+    }
+
+    .left{
+        display: flex;
+        align-items: center;
+        gap: 34px;
+    }
+
+    .right{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 34px;
+    }
+    button{
+        height: 40px;
+        width: 100px;
+        background-color: rgb(255, 255, 255);
+        border: none;
+        border-radius: 20px;
+    }
+}
