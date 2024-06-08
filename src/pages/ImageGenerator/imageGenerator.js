@@ -3,8 +3,8 @@ import Navbar from "../common/Navbar/navbar";
 import "./imageGenerator.css"
 import default_image from '../ImageGenerator/default_image.png'
 import React, {useRef, useState, useContext} from "react";
-const API_KEY =process.env.API_KEY ;  //provide your API KEY
-
+const APIKEY = process.env.API_KEY ;  //provide your API KEY
+console.log(APIKEY);
 
 const ImageGenerator = () => {
   const cValue = useContext(PointsContext);
@@ -21,7 +21,7 @@ const ImageGenerator = () => {
 
       cValue.setUserPoints(cValue.userPoints - 1);
       
-      const res = await fetch(`https://api.unsplash.com/search/photos?client_id=${API_KEY}&page=1&query=${inputRef.current.value}`, // link for API SITE
+      const res = await fetch(`https://api.unsplash.com/search/photos?client_id=${APIKEY}&page=1&query=${inputRef.current.value}`, // link for API SITE
       );
       const data = await res.json();
       console.log(data);    

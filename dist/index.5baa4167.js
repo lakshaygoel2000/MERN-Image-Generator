@@ -34434,7 +34434,8 @@ var _defaultImagePngDefault = parcelHelpers.interopDefault(_defaultImagePng);
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _s = $RefreshSig$();
-const API_KEY = "'pHkRlXECu8q2jCchPfs7dZNMoyuckJdx303s4frWov4';"; //provide your API KEY
+const APIKEY = "pHkRlXECu8q2jCchPfs7dZNMoyuckJdx303s4frWov4;"; //provide your API KEY
+console.log(APIKEY);
 const ImageGenerator = ()=>{
     _s();
     const cValue = (0, _react.useContext)((0, _pointsContextDefault.default));
@@ -34449,7 +34450,7 @@ const ImageGenerator = ()=>{
                 return;
             }
             cValue.setUserPoints(cValue.userPoints - 1);
-            const res = await fetch(`https://api.unsplash.com/search/photos?client_id=${API_KEY}&page=1&query=${inputRef.current.value}`);
+            const res = await fetch(`https://api.unsplash.com/search/photos?client_id=${APIKEY}&page=1&query=${inputRef.current.value}`);
             const data = await res.json();
             console.log(data);
             const imageUrl = data.results[i].urls.raw;
