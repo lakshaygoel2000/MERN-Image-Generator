@@ -33,11 +33,11 @@ const App = ()=>{
     const router = createBrowserRouter([
         {
             path: "/",
-            element: <HomePage/>,
+            element: <HomePage/>
         },
         {
             path: "/image-generator",
-            element: isLoggedIn? <ImageGenerator/> : <Navigate to='/login' />,
+            element: isLoggedIn? <ImageGenerator/> : <Navigate to='/login' />
         },
         {
             path: '/history',
@@ -71,6 +71,3 @@ const App = ()=>{
 }
 
 root.render(<App/>);
-app.listen(PORT,()=>{
-    console.log('server is running');
-})

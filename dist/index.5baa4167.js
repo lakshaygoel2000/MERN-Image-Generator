@@ -2977,6 +2977,7 @@ var _loginJsDefault = parcelHelpers.interopDefault(_loginJs);
 var _s = $RefreshSig$();
 const parent = document.getElementById("root");
 const root = (0, _clientDefault.default).createRoot(parent);
+const PORT = 1234;
 const App = ()=>{
     _s();
     const [userPoints, setUserPoints] = (0, _react.useState)(20);
