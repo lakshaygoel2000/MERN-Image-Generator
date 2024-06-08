@@ -10,11 +10,10 @@ import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom"
 import HistoryInformationPage from "./src/pages/HistoryInformationPage/historyInformationPage.js";
 import Signup from "./src/pages/signup/signup.js";
 import Login from "./src/pages/login/login.js";
-const express = require ("express");
-const app= express();
+
 const parent = document.getElementById("root");
 const root = ReactDOM.createRoot(parent);
-const PORT = process.env.PORT || 1234
+
 const App = ()=>{
     const [userPoints, setUserPoints] = useState(20);
     const [isLoggedIn, setIsLoggedIn] = useState(()=>{
@@ -72,8 +71,3 @@ const App = ()=>{
 }
 
 root.render(<App/>);
-app.use(router);
-
-app.listen(PORT,()=>{
-    console.log('server is running');
-})
