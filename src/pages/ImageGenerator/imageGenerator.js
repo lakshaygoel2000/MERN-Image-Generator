@@ -3,8 +3,7 @@ import Navbar from "../common/Navbar/navbar";
 import "./imageGenerator.css"
 import default_image from '../ImageGenerator/default_image.png'
 import React, {useRef, useState, useContext} from "react";
-
-const API_KEY = process.env.API-KEY ;  //provide your API KEY
+const API_KEY =process.env.API_KEY ;  //provide your API KEY
 
 
 const ImageGenerator = () => {

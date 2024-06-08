@@ -3068,7 +3068,7 @@ const App = ()=>{
         columnNumber: 9
     }, undefined);
 };
-_s(App, "e4OHHs1r83BKt0H+CTf1Irw+/Us=");
+_s(App, "AjPa//wa6IhZ9CfR5SMjsDN+AMo=");
 _c = App;
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
     fileName: "app.js",
@@ -34434,7 +34434,7 @@ var _defaultImagePngDefault = parcelHelpers.interopDefault(_defaultImagePng);
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _s = $RefreshSig$();
-const API_KEY = "pHkRlXECu8q2jCchPfs7dZNMoyuckJdx303s4frWov4"; //provide your API KEY
+const API_KEY = "'pHkRlXECu8q2jCchPfs7dZNMoyuckJdx303s4frWov4';"; //provide your API KEY
 const ImageGenerator = ()=>{
     _s();
     const cValue = (0, _react.useContext)((0, _pointsContextDefault.default));
@@ -34465,7 +34465,7 @@ const ImageGenerator = ()=>{
                 page: "imageGenerator"
             }, void 0, false, {
                 fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                lineNumber: 40,
+                lineNumber: 39,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34476,14 +34476,14 @@ const ImageGenerator = ()=>{
                         children: error
                     }, void 0, false, {
                         fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                        lineNumber: 43,
+                        lineNumber: 42,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                         src: image_url === "/" ? (0, _defaultImagePngDefault.default) : image_url
                     }, void 0, false, {
                         fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                        lineNumber: 47,
+                        lineNumber: 46,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -34495,7 +34495,7 @@ const ImageGenerator = ()=>{
                         children: "Prev"
                     }, void 0, false, {
                         fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                        lineNumber: 48,
+                        lineNumber: 47,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -34507,7 +34507,7 @@ const ImageGenerator = ()=>{
                         children: "Next"
                     }, void 0, false, {
                         fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                        lineNumber: 49,
+                        lineNumber: 48,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34520,7 +34520,7 @@ const ImageGenerator = ()=>{
                                     ref: inputRef
                                 }, void 0, false, {
                                     fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                                    lineNumber: 52,
+                                    lineNumber: 51,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -34528,30 +34528,30 @@ const ImageGenerator = ()=>{
                                     children: "Generate"
                                 }, void 0, false, {
                                     fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                                    lineNumber: 53,
+                                    lineNumber: 52,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                            lineNumber: 51,
+                            lineNumber: 50,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                        lineNumber: 50,
+                        lineNumber: 49,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                lineNumber: 41,
+                lineNumber: 40,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/ImageGenerator/imageGenerator.js",
-        lineNumber: 39,
+        lineNumber: 38,
         columnNumber: 5
     }, undefined);
 };
