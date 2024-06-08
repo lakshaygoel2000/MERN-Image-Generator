@@ -4,7 +4,6 @@ import "./imageGenerator.css"
 import default_image from '../ImageGenerator/default_image.png'
 import React, {useRef, useState, useContext} from "react";
 const APIKEY = process.env.API_KEY ;  //provide your API KEY
-console.log(APIKEY);
 
 const ImageGenerator = () => {
   const cValue = useContext(PointsContext);
