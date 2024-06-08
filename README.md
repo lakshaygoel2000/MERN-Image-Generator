@@ -1,4 +1,17 @@
-# MERN-Project
-A glimpse of Image Generator using Unsplash API.
-![image](https://github.com/lakshaygoel2000/MERN-Project/assets/146955628/4ba43cff-e6d1-4be4-a063-354e2bea672f)
-![image](https://github.com/lakshaygoel2000/MERN-Project/assets/146955628/f6941020-eb00-4639-846e-a9d775266f38)
+# React Setup
+
+make 3 basic files
+--> index.html
+--> styles.css
+--> app.js
+
+initialize npm repo:
+--> npm init -y
+
+install dependencies:
+--> npm i react
+--> npm i react-dom
+--> npm i parcel
+
+run the app:
+--> npx parcel index.html
