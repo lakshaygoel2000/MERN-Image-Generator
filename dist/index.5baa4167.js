@@ -2977,7 +2977,6 @@ var _loginJsDefault = parcelHelpers.interopDefault(_loginJs);
 var _s = $RefreshSig$();
 const parent = document.getElementById("root");
 const root = (0, _clientDefault.default).createRoot(parent);
-const PORT = 1234;
 const App = ()=>{
     _s();
     const [userPoints, setUserPoints] = (0, _react.useState)(20);
@@ -3076,9 +3075,6 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
     lineNumber: 73,
     columnNumber: 13
 }, undefined));
-app.listen(PORT, ()=>{
-    console.log("server is running");
-});
 var _c;
 $RefreshReg$(_c, "App");
 
