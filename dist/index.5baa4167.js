@@ -34438,19 +34438,19 @@ const APIKEY = "pHkRlXECu8q2jCchPfs7dZNMoyuckJdx303s4frWov4;"; //provide your AP
 const ImageGenerator = ()=>{
     _s();
     const cValue = (0, _react.useContext)((0, _pointsContextDefault.default));
-    const [imageUrls, setImageUrls] = (0, _react.useState)([]); // Store an array of image URLs
+    const [imageUrls, setImageUrls] = (0, _react.useState)([]);
     const [error, setError] = (0, _react.useState)(null);
     const inputRef = (0, _react.useRef)(null);
-    const [searchHistory, setSearchHistory] = (0, _react.useState)([]); // Add this state to store search history
-    const [currentPage, setCurrentPage] = (0, _react.useState)(1); // Add this state to keep track of the current page
-    const [totalPages, setTotalPages] = (0, _react.useState)(1); // Add this state to keep track of the total pages
+    const [searchHistory, setSearchHistory] = (0, _react.useState)([]); // to store search history
+    const [currentPage, setCurrentPage] = (0, _react.useState)(1); //  to keep track of the current page
+    const [totalPages, setTotalPages] = (0, _react.useState)(1); // to keep track of the total pages
     (0, _react.useEffect)(()=>{
         // Read search history from localStorage
         const storedHistory = localStorage.getItem("searchHistory");
         if (storedHistory) setSearchHistory(JSON.parse(storedHistory));
     }, []);
     (0, _react.useEffect)(()=>{
-        // Write search history to localStorage
+        // Writing search history to localStorage
         localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
     }, [
         searchHistory
@@ -34465,9 +34465,13 @@ const ImageGenerator = ()=>{
             const res = await fetch(`https://api.unsplash.com/search/photos?client_id=${APIKEY}&page=${currentPage}&query=${inputRef.current.value}`);
             const data = await res.json();
             console.log(data);
-            const imageUrlsArray = data.results.map((result)=>result.urls.raw);
+            const imageUrlsArray = data.results.map((result)=>result.urls.small);
             setImageUrls(imageUrlsArray.slice(0, 9)); // Show only 9 results per page
             setTotalPages(data.total_pages);
+            setSearchHistory((prevHistory)=>[
+                    ...prevHistory,
+                    inputRef.current.value
+                ]);
         } catch (err) {
             console.error(err);
             setError(err.message);
@@ -34491,7 +34495,7 @@ const ImageGenerator = ()=>{
                 page: "imageGenerator"
             }, void 0, false, {
                 fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                lineNumber: 70,
+                lineNumber: 71,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34506,7 +34510,7 @@ const ImageGenerator = ()=>{
                                 ref: inputRef
                             }, void 0, false, {
                                 fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                                lineNumber: 73,
+                                lineNumber: 74,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -34514,13 +34518,13 @@ const ImageGenerator = ()=>{
                                 children: "Generate"
                             }, void 0, false, {
                                 fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                                lineNumber: 74,
+                                lineNumber: 75,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                        lineNumber: 72,
+                        lineNumber: 73,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34532,7 +34536,7 @@ const ImageGenerator = ()=>{
                                 children: "Prev"
                             }, void 0, false, {
                                 fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                                lineNumber: 77,
+                                lineNumber: 78,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -34544,7 +34548,7 @@ const ImageGenerator = ()=>{
                                 ]
                             }, void 0, true, {
                                 fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                                lineNumber: 80,
+                                lineNumber: 81,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -34553,19 +34557,19 @@ const ImageGenerator = ()=>{
                                 children: "Next"
                             }, void 0, false, {
                                 fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                                lineNumber: 83,
+                                lineNumber: 84,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                        lineNumber: 76,
+                        lineNumber: 77,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                lineNumber: 71,
+                lineNumber: 72,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34574,18 +34578,18 @@ const ImageGenerator = ()=>{
                         src: imageUrl
                     }, index, false, {
                         fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                        lineNumber: 90,
+                        lineNumber: 91,
                         columnNumber: 11
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                lineNumber: 88,
+                lineNumber: 89,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/ImageGenerator/imageGenerator.js",
-        lineNumber: 69,
+        lineNumber: 70,
         columnNumber: 5
     }, undefined);
 };
@@ -34680,13 +34684,6 @@ const HistoryPage = ()=>{
                 lineNumber: 25,
                 columnNumber: 7
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                children: "Used localStorage for storing history. working locally on computer."
-            }, void 0, false, {
-                fileName: "src/pages/HistoryPage/historyPage.js",
-                lineNumber: 26,
-                columnNumber: 9
-            }, undefined),
             searchHistory.length > 0 && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "history-clear-button",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -34694,12 +34691,12 @@ const HistoryPage = ()=>{
                     children: "Clear History"
                 }, void 0, false, {
                     fileName: "src/pages/HistoryPage/historyPage.js",
-                    lineNumber: 31,
+                    lineNumber: 28,
                     columnNumber: 13
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/HistoryPage/historyPage.js",
-                lineNumber: 30,
+                lineNumber: 27,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34708,12 +34705,12 @@ const HistoryPage = ()=>{
                         item: item
                     }, index, false, {
                         fileName: "src/pages/HistoryPage/historyPage.js",
-                        lineNumber: 37,
+                        lineNumber: 34,
                         columnNumber: 13
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/pages/HistoryPage/historyPage.js",
-                lineNumber: 35,
+                lineNumber: 32,
                 columnNumber: 9
             }, undefined)
         ]

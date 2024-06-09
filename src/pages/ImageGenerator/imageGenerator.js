@@ -8,12 +8,12 @@ const APIKEY = process.env.API_KEY ;  //provide your API KEY
 
 const ImageGenerator = () => {
   const cValue = useContext(PointsContext);
-  const [imageUrls, setImageUrls] = useState([]); // Store an array of image URLs
+  const [imageUrls, setImageUrls] = useState([]); 
   const [error, setError] = useState(null); 
   const inputRef = useRef(null);
-  const [searchHistory, setSearchHistory] = useState([]); // Add this state to store search history
-  const [currentPage, setCurrentPage] = useState(1); // Add this state to keep track of the current page
-  const [totalPages, setTotalPages] = useState(1); // Add this state to keep track of the total pages
+  const [searchHistory, setSearchHistory] = useState([]); // to store search history
+  const [currentPage, setCurrentPage] = useState(1); //  to keep track of the current page
+  const [totalPages, setTotalPages] = useState(1); // to keep track of the total pages
 
   useEffect(() => {
     // Read search history from localStorage
@@ -24,7 +24,7 @@ const ImageGenerator = () => {
   }, []);
 
   useEffect(() => {
-    // Write search history to localStorage
+    // Writing search history to localStorage
     localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
   }, [searchHistory]);
 
@@ -41,9 +41,10 @@ const ImageGenerator = () => {
       );
       const data = await res.json();
       console.log(data);    
-      const imageUrlsArray = data.results.map(result => result.urls.raw);
+      const imageUrlsArray = data.results.map(result => result.urls.small);
       setImageUrls(imageUrlsArray.slice(0, 9)); // Show only 9 results per page
       setTotalPages(data.total_pages);
+      setSearchHistory((prevHistory) => [...prevHistory, inputRef.current.value]);
     } 
     catch (err) {
       console.error(err);

@@ -23,9 +23,6 @@ const HistoryPage = () => {
   return (
     <div>
       <Navbar page="history" />
-        <p>Used localStorage for storing history.
-          working locally on computer.
-        </p>
         {searchHistory.length > 0 && (
             <div className="history-clear-button">
             <button onClick={handleClearHistory}>Clear History</button>
