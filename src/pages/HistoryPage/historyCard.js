@@ -1,16 +1,14 @@
-import {Link} from 'react-router-dom';
+import React from "react";
+import "./historyCard.css";
 
-const HistoryCard = (props) => {
+import React from 'react';
 
-    const product = props.item;
-
-    return(
-        <div className='history-card'>
-            <h4>{product.title}</h4>
-            <p>{product.description}</p>
-            <Link to={`/history/${product.id}`}>More</Link>
-        </div>
-    )
-}
+const HistoryCard = ({ item }) => {
+  return (
+    <div className="history-card">
+      <p>Search query: {item}</p>
+    </div>
+  );
+};
 
 export default HistoryCard;

@@ -5,10 +5,17 @@
     align-items: center;
     justify-content: space-evenly;
     gap: 24px;
-
     flex-wrap: wrap;
 }
-
+.history-clear-button{
+    width: 100%;
+    button{
+        font-size: large;
+        position: relative;
+        margin-top: 20px;
+        
+    }
+}
 .history-card{
     max-width: 300px;
     border: 1px solid rgb(92, 6, 6);

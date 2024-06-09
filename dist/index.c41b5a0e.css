@@ -94,14 +94,13 @@
 .content {
   text-align: center;
   color: #303030;
-  width: 600px;
-  margin: 20px;
+  width: 40vw;
   padding: 10px;
   font-size: larger;
   display: block;
   position: absolute;
   top: 20%;
-  left: 28%;
+  left: 30%;
 
   & h1 {
     margin-bottom: 10px;
@@ -113,9 +112,15 @@
 
   & button {
     background-color: #a6e71b;
-    width: 400px;
+    width: 30vw;
+    margin-top: 10px;
     font-size: medium;
-    text-decoration: none;
+    font-weight: bold;
+    text-decoration-line: none;
+  }
+
+  & button:hover {
+    background-color: #ffff12;
   }
 }
 
@@ -127,6 +132,16 @@
   gap: 24px;
   padding: 24px 48px;
   display: flex;
+}
+
+.history-clear-button {
+  width: 100%;
+
+  & button {
+    margin-top: 20px;
+    font-size: large;
+    position: relative;
+  }
 }
 
 .history-card {
@@ -145,6 +160,20 @@
   margin: 16px auto;
   padding: 4px 8px;
   display: block;
+}
+
+.history-card {
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 100px;
+  display: block;
+
+  & p {
+    text-transform: capitalize;
+    color: #000;
+    font-size: 20px;
+  }
 }
 
 .signup-box {

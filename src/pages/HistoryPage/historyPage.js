@@ -1,39 +1,41 @@
+import React, { useState, useEffect } from 'react';
 import Navbar from "../common/Navbar/navbar";
-import {useState, useEffect} from "react";
 import "./historyPage.css";
 import HistoryCard from "./historyCard";
 
-const HistoryPage = (props) => {
-    const [data, setData] = useState([]);
-    const [searchText, setSearchText] = useState("");
+const HistoryPage = () => {
+  const [searchHistory, setSearchHistory] = useState([]);
 
-
-    const getData = async () => {
-        try{
-            const res = await fetch(`https://dummyjson.com/products/search?q=${searchText}`);
-            const obj = await res.json();
-            setData(obj.products);
-        }
-        catch(err){
-            console.log(err);
-        }
+  useEffect(() => {
+    const storedHistory = localStorage.getItem('searchHistory');
+    if (storedHistory) {
+      const history = JSON.parse(storedHistory);
+      console.log("History:", history); // Add a console log to check the data
+      setSearchHistory(history.reverse()); // Reverse the history array
     }
+  }, []);
 
-    useEffect(()=>{
-        getData();
-    }, [searchText]);
+  const handleClearHistory = () => {
+    localStorage.removeItem('searchHistory');
+    setSearchHistory([]);
+  };
 
-    return (
-        <div>
-            <Navbar page="history"/>
-            <input className="search-box-input" onChange={(e)=>{setSearchText(e.target.value);}}/>
-            <div className="history-main-container">
-                {data.map((item)=>{
-                    return <HistoryCard item={item}/>
-                })}
-            </div>
+  return (
+    <div>
+      <Navbar page="history" />
+        {searchHistory.length > 0 && (
+            <div className="history-clear-button">
+            <button onClick={handleClearHistory}>Clear History</button>
+          </div>
+        )}
+        
+        <div className="history-main-container">
+            {searchHistory.map((item, index) => (
+            <HistoryCard key={index} item={item} />
+            ))}
         </div>
-    )
+    </div>
+  );
 };
 
 export default HistoryPage;

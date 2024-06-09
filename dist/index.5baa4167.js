@@ -34364,14 +34364,14 @@ const HomePage = (props)=>{
                 class: "content",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                        children: "AI 3D Image Generator"
+                        children: "Image Generator"
                     }, void 0, false, {
                         fileName: "src/pages/HomePage/homepage.js",
                         lineNumber: 11,
                         columnNumber: 21
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        children: "Generate 3D designs with a powerful online AI 3D image generator, Fotor. Simplify your process to a 3D AI image in seconds using just text descriptions."
+                        children: "Generate designs with a powerful online image generator. Simplify your process to an image in seconds using just text descriptions."
                     }, void 0, false, {
                         fileName: "src/pages/HomePage/homepage.js",
                         lineNumber: 12,
@@ -34380,7 +34380,7 @@ const HomePage = (props)=>{
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                             to: "/image-generator",
-                            children: "Generate 3D Images Now"
+                            children: "Generate Images Now"
                         }, void 0, false, {
                             fileName: "src/pages/HomePage/homepage.js",
                             lineNumber: 13,
@@ -34442,6 +34442,18 @@ const ImageGenerator = ()=>{
     const [error, setError] = (0, _react.useState)(null);
     const inputRef = (0, _react.useRef)(null);
     const [i, setI] = (0, _react.useState)(0);
+    const [searchHistory, setSearchHistory] = (0, _react.useState)([]); // Add this state to store search history
+    (0, _react.useEffect)(()=>{
+        // Read search history from localStorage
+        const storedHistory = localStorage.getItem("searchHistory");
+        if (storedHistory) setSearchHistory(JSON.parse(storedHistory));
+    }, []);
+    (0, _react.useEffect)(()=>{
+        // Write search history to localStorage
+        localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+    }, [
+        searchHistory
+    ]);
     const handleClick = async ()=>{
         try {
             if (inputRef.current.value === "") {
@@ -34454,6 +34466,11 @@ const ImageGenerator = ()=>{
             console.log(data);
             const imageUrl = data.results[i].urls.raw;
             setImg_url(imageUrl);
+            // Add current search query to search history
+            setSearchHistory((prevHistory)=>[
+                    ...prevHistory,
+                    inputRef.current.value
+                ]);
         } catch (err) {
             console.error(err);
             setError(err.message);
@@ -34465,7 +34482,7 @@ const ImageGenerator = ()=>{
                 page: "imageGenerator"
             }, void 0, false, {
                 fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                lineNumber: 38,
+                lineNumber: 57,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34476,14 +34493,14 @@ const ImageGenerator = ()=>{
                         children: error
                     }, void 0, false, {
                         fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                        lineNumber: 41,
+                        lineNumber: 60,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                         src: image_url === "/" ? (0, _defaultImagePngDefault.default) : image_url
                     }, void 0, false, {
                         fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                        lineNumber: 45,
+                        lineNumber: 64,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -34495,7 +34512,7 @@ const ImageGenerator = ()=>{
                         children: "Prev"
                     }, void 0, false, {
                         fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                        lineNumber: 46,
+                        lineNumber: 65,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -34507,7 +34524,7 @@ const ImageGenerator = ()=>{
                         children: "Next"
                     }, void 0, false, {
                         fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                        lineNumber: 47,
+                        lineNumber: 66,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34520,7 +34537,7 @@ const ImageGenerator = ()=>{
                                     ref: inputRef
                                 }, void 0, false, {
                                     fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                                    lineNumber: 50,
+                                    lineNumber: 69,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -34528,34 +34545,34 @@ const ImageGenerator = ()=>{
                                     children: "Generate"
                                 }, void 0, false, {
                                     fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                                    lineNumber: 51,
+                                    lineNumber: 70,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                            lineNumber: 49,
+                            lineNumber: 68,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                        lineNumber: 48,
+                        lineNumber: 67,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                lineNumber: 39,
+                lineNumber: 58,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/ImageGenerator/imageGenerator.js",
-        lineNumber: 37,
+        lineNumber: 56,
         columnNumber: 5
     }, undefined);
 };
-_s(ImageGenerator, "kn+0U3zbuDxH/jAvEXZXG0J/sGU=");
+_s(ImageGenerator, "6lwTsYI17YlGPj76CqSkPIP6WOQ=");
 _c = ImageGenerator;
 exports.default = ImageGenerator;
 var _c;
@@ -34614,74 +34631,75 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
 var _navbar = require("../common/Navbar/navbar");
 var _navbarDefault = parcelHelpers.interopDefault(_navbar);
-var _react = require("react");
 var _historyPageCss = require("./historyPage.css");
 var _historyCard = require("./historyCard");
 var _historyCardDefault = parcelHelpers.interopDefault(_historyCard);
 var _s = $RefreshSig$();
-const HistoryPage = (props)=>{
+const HistoryPage = ()=>{
     _s();
-    const [data, setData] = (0, _react.useState)([]);
-    const [searchText, setSearchText] = (0, _react.useState)("");
-    const getData = async ()=>{
-        try {
-            const res = await fetch(`https://dummyjson.com/products/search?q=${searchText}`);
-            const obj = await res.json();
-            setData(obj.products);
-        } catch (err) {
-            console.log(err);
-        }
-    };
+    const [searchHistory, setSearchHistory] = (0, _react.useState)([]);
     (0, _react.useEffect)(()=>{
-        getData();
-    }, [
-        searchText
-    ]);
+        const storedHistory = localStorage.getItem("searchHistory");
+        if (storedHistory) {
+            const history = JSON.parse(storedHistory);
+            console.log("History:", history); // Add a console log to check the data
+            setSearchHistory(history.reverse()); // Reverse the history array
+        }
+    }, []);
+    const handleClearHistory = ()=>{
+        localStorage.removeItem("searchHistory");
+        setSearchHistory([]);
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default), {
                 page: "history"
             }, void 0, false, {
                 fileName: "src/pages/HistoryPage/historyPage.js",
-                lineNumber: 28,
-                columnNumber: 13
+                lineNumber: 25,
+                columnNumber: 7
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                className: "search-box-input",
-                onChange: (e)=>{
-                    setSearchText(e.target.value);
-                }
+            searchHistory.length > 0 && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "history-clear-button",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    onClick: handleClearHistory,
+                    children: "Clear History"
+                }, void 0, false, {
+                    fileName: "src/pages/HistoryPage/historyPage.js",
+                    lineNumber: 28,
+                    columnNumber: 13
+                }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/HistoryPage/historyPage.js",
-                lineNumber: 29,
+                lineNumber: 27,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "history-main-container",
-                children: data.map((item)=>{
-                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _historyCardDefault.default), {
+                children: searchHistory.map((item, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _historyCardDefault.default), {
                         item: item
-                    }, void 0, false, {
+                    }, index, false, {
                         fileName: "src/pages/HistoryPage/historyPage.js",
-                        lineNumber: 32,
-                        columnNumber: 28
-                    }, undefined);
-                })
+                        lineNumber: 34,
+                        columnNumber: 13
+                    }, undefined))
             }, void 0, false, {
                 fileName: "src/pages/HistoryPage/historyPage.js",
-                lineNumber: 30,
-                columnNumber: 13
+                lineNumber: 32,
+                columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/HistoryPage/historyPage.js",
-        lineNumber: 27,
-        columnNumber: 9
+        lineNumber: 24,
+        columnNumber: 5
     }, undefined);
 };
-_s(HistoryPage, "HVBDfpXXJRTfmtTwpfpbn1a0Aqg=");
+_s(HistoryPage, "x4lpyl2EUfakAa2FkDoTay9HLYQ=");
 _c = HistoryPage;
 exports.default = HistoryPage;
 var _c;
@@ -34692,7 +34710,7 @@ $RefreshReg$(_c, "HistoryPage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../common/Navbar/navbar":"2Xn2v","react":"21dqq","./historyPage.css":"ckjrN","./historyCard":"1Fyam","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ckjrN":[function() {},{}],"1Fyam":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./historyPage.css":"ckjrN","./historyCard":"1Fyam","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../common/Navbar/navbar":"2Xn2v","react":"21dqq"}],"ckjrN":[function() {},{}],"1Fyam":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$1bba = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34702,39 +34720,26 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _reactRouterDom = require("react-router-dom");
-const HistoryCard = (props)=>{
-    const product = props.item;
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _historyCardCss = require("./historyCard.css");
+const HistoryCard = ({ item })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "history-card",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                children: product.title
-            }, void 0, false, {
-                fileName: "src/pages/HistoryPage/historyCard.js",
-                lineNumber: 9,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                children: product.description
-            }, void 0, false, {
-                fileName: "src/pages/HistoryPage/historyCard.js",
-                lineNumber: 10,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                to: `/history/${product.id}`,
-                children: "More"
-            }, void 0, false, {
-                fileName: "src/pages/HistoryPage/historyCard.js",
-                lineNumber: 11,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+            children: [
+                "Search query: ",
+                item
+            ]
+        }, void 0, true, {
+            fileName: "src/pages/HistoryPage/historyCard.js",
+            lineNumber: 9,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
         fileName: "src/pages/HistoryPage/historyCard.js",
         lineNumber: 8,
-        columnNumber: 9
+        columnNumber: 5
     }, undefined);
 };
 _c = HistoryCard;
@@ -34747,7 +34752,7 @@ $RefreshReg$(_c, "HistoryCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aeRD2":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq","./historyCard.css":"8XbBj"}],"8XbBj":[function() {},{}],"aeRD2":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$7875 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

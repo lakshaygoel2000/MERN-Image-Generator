@@ -1,16 +1,14 @@
 .content{
     text-align: center;
-    margin: 48px;
     color: rgb(48, 48, 48);
     display: block;
-    margin: 20px;
-    width: 600px;
+    width: 40vw;
     padding: 10px;
     font-size: larger;
     position: absolute;
 	top: 20%;
-	left: 28%;
-
+	left: 30%;
+    
     h1{
         margin-bottom: 10px;
     }
@@ -19,8 +17,14 @@
     }
     button{
         font-size: medium;
-        width: 400px;
+        margin-top: 10px;
+        width: 30vw;
         background-color: rgb(166, 231, 27);
-        text-decoration: none;
+        text-decoration-line: none;
+        font-weight: bold;
+        
+    }
+    button:hover{
+        background-color: rgb(255, 255, 18);
     }
 }

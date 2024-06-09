@@ -8,9 +8,9 @@ const HomePage = (props) => {
         <div> 
             <Navbar page="home"/>
                 <div class= "content">
-                    <h1>AI 3D Image Generator</h1>
-                    <p>Generate 3D designs with a powerful online AI 3D image generator, Fotor. Simplify your process to a 3D AI image in seconds using just text descriptions.</p>
-                    <button><Link to="/image-generator">Generate 3D Images Now</Link></button>
+                    <h1>Image Generator</h1>
+                    <p>Generate designs with a powerful online image generator. Simplify your process to an image in seconds using just text descriptions.</p>
+                    <button><Link to="/image-generator">Generate Images Now</Link></button>
                 </div>
         </div>
     )
