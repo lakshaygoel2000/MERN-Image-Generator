@@ -34660,32 +34660,16 @@ const HistoryPage = ()=>{
     _s();
     const [searchHistory, setSearchHistory] = (0, _react.useState)([]);
     (0, _react.useEffect)(()=>{
-        fetch("data.json").then((response)=>response.json()).then((data)=>{
-            setSearchHistory(data.searchHistory);
-        });
+        const storedHistory = localStorage.getItem("searchHistory");
+        if (storedHistory) {
+            const history = JSON.parse(storedHistory);
+            console.log("History:", history);
+            setSearchHistory(history.reverse());
+        }
     }, []);
-    const handleSearch = (searchTerm)=>{
-        const newSearchHistory = [
-            ...searchHistory,
-            searchTerm
-        ];
-        setSearchHistory(newSearchHistory);
-        updateDataJson(newSearchHistory);
-    };
     const handleClearHistory = ()=>{
+        localStorage.removeItem("searchHistory");
         setSearchHistory([]);
-        updateDataJson([]);
-    };
-    const updateDataJson = (newSearchHistory)=>{
-        fetch("data.json", {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                searchHistory: newSearchHistory
-            })
-        });
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
@@ -34693,8 +34677,15 @@ const HistoryPage = ()=>{
                 page: "history"
             }, void 0, false, {
                 fileName: "src/pages/HistoryPage/historyPage.js",
-                lineNumber: 38,
+                lineNumber: 25,
                 columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: "Used localStorage for storing history. working locally on computer."
+            }, void 0, false, {
+                fileName: "src/pages/HistoryPage/historyPage.js",
+                lineNumber: 26,
+                columnNumber: 9
             }, undefined),
             searchHistory.length > 0 && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "history-clear-button",
@@ -34703,13 +34694,13 @@ const HistoryPage = ()=>{
                     children: "Clear History"
                 }, void 0, false, {
                     fileName: "src/pages/HistoryPage/historyPage.js",
-                    lineNumber: 41,
-                    columnNumber: 11
+                    lineNumber: 31,
+                    columnNumber: 13
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/HistoryPage/historyPage.js",
-                lineNumber: 40,
-                columnNumber: 9
+                lineNumber: 30,
+                columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "history-main-container",
@@ -34717,18 +34708,18 @@ const HistoryPage = ()=>{
                         item: item
                     }, index, false, {
                         fileName: "src/pages/HistoryPage/historyPage.js",
-                        lineNumber: 46,
-                        columnNumber: 11
+                        lineNumber: 37,
+                        columnNumber: 13
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/pages/HistoryPage/historyPage.js",
-                lineNumber: 44,
-                columnNumber: 7
+                lineNumber: 35,
+                columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/HistoryPage/historyPage.js",
-        lineNumber: 37,
+        lineNumber: 24,
         columnNumber: 5
     }, undefined);
 };
