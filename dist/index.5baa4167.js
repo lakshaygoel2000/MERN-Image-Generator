@@ -34438,11 +34438,12 @@ const APIKEY = "pHkRlXECu8q2jCchPfs7dZNMoyuckJdx303s4frWov4;"; //provide your AP
 const ImageGenerator = ()=>{
     _s();
     const cValue = (0, _react.useContext)((0, _pointsContextDefault.default));
-    const [image_url, setImg_url] = (0, _react.useState)("/");
+    const [imageUrls, setImageUrls] = (0, _react.useState)([]); // Store an array of image URLs
     const [error, setError] = (0, _react.useState)(null);
     const inputRef = (0, _react.useRef)(null);
-    const [i, setI] = (0, _react.useState)(0);
     const [searchHistory, setSearchHistory] = (0, _react.useState)([]); // Add this state to store search history
+    const [currentPage, setCurrentPage] = (0, _react.useState)(1); // Add this state to keep track of the current page
+    const [totalPages, setTotalPages] = (0, _react.useState)(1); // Add this state to keep track of the total pages
     (0, _react.useEffect)(()=>{
         // Read search history from localStorage
         const storedHistory = localStorage.getItem("searchHistory");
@@ -34461,19 +34462,27 @@ const ImageGenerator = ()=>{
                 return;
             }
             cValue.setUserPoints(cValue.userPoints - 1);
-            const res = await fetch(`https://api.unsplash.com/search/photos?client_id=${APIKEY}&page=1&query=${inputRef.current.value}`);
+            const res = await fetch(`https://api.unsplash.com/search/photos?client_id=${APIKEY}&page=${currentPage}&query=${inputRef.current.value}`);
             const data = await res.json();
             console.log(data);
-            const imageUrl = data.results[i].urls.raw;
-            setImg_url(imageUrl);
-            // Add current search query to search history
-            setSearchHistory((prevHistory)=>[
-                    ...prevHistory,
-                    inputRef.current.value
-                ]);
+            const imageUrlsArray = data.results.map((result)=>result.urls.raw);
+            setImageUrls(imageUrlsArray.slice(0, 9)); // Show only 9 results per page
+            setTotalPages(data.total_pages);
         } catch (err) {
             console.error(err);
             setError(err.message);
+        }
+    };
+    const handleNextPage = async ()=>{
+        if (currentPage < totalPages) {
+            setCurrentPage(currentPage + 1);
+            handleClick();
+        }
+    };
+    const handlePrevPage = async ()=>{
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+            handleClick();
         }
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34482,97 +34491,104 @@ const ImageGenerator = ()=>{
                 page: "imageGenerator"
             }, void 0, false, {
                 fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                lineNumber: 57,
+                lineNumber: 70,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "image-generator-main-container",
+                className: "image-generator-search-container",
                 children: [
-                    error && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "error-message",
-                        children: error
-                    }, void 0, false, {
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "image-search",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                type: "text",
+                                ref: inputRef
+                            }, void 0, false, {
+                                fileName: "src/pages/ImageGenerator/imageGenerator.js",
+                                lineNumber: 73,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                onClick: handleClick,
+                                children: "Generate"
+                            }, void 0, false, {
+                                fileName: "src/pages/ImageGenerator/imageGenerator.js",
+                                lineNumber: 74,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
                         fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                        lineNumber: 60,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                        src: image_url === "/" ? (0, _defaultImagePngDefault.default) : image_url
-                    }, void 0, false, {
-                        fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                        lineNumber: 64,
+                        lineNumber: 72,
                         columnNumber: 9
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        class: "prev-move",
-                        onClick: ()=>{
-                            setI(i - 1);
-                            handleClick();
-                        },
-                        children: "Prev"
-                    }, void 0, false, {
-                        fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                        lineNumber: 65,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        class: "next-move",
-                        onClick: ()=>{
-                            setI(i + 1);
-                            handleClick();
-                        },
-                        children: "Next"
-                    }, void 0, false, {
-                        fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                        lineNumber: 66,
-                        columnNumber: 11
-                    }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "image-generator-search-container",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "image-search",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                    type: "text",
-                                    ref: inputRef
-                                }, void 0, false, {
-                                    fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                                    lineNumber: 69,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                    onClick: handleClick,
-                                    children: "Generate"
-                                }, void 0, false, {
-                                    fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                                    lineNumber: 70,
-                                    columnNumber: 13
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                            lineNumber: 68,
-                            columnNumber: 11
-                        }, undefined)
-                    }, void 0, false, {
+                        className: "pagination",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                onClick: handlePrevPage,
+                                disabled: currentPage === 1,
+                                children: "Prev"
+                            }, void 0, false, {
+                                fileName: "src/pages/ImageGenerator/imageGenerator.js",
+                                lineNumber: 77,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                children: [
+                                    "Page ",
+                                    currentPage,
+                                    " of ",
+                                    totalPages
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/pages/ImageGenerator/imageGenerator.js",
+                                lineNumber: 80,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                onClick: handleNextPage,
+                                disabled: currentPage === totalPages,
+                                children: "Next"
+                            }, void 0, false, {
+                                fileName: "src/pages/ImageGenerator/imageGenerator.js",
+                                lineNumber: 83,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
                         fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                        lineNumber: 67,
+                        lineNumber: 76,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                lineNumber: 58,
+                lineNumber: 71,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "image-grid",
+                children: imageUrls.map((imageUrl, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                        src: imageUrl
+                    }, index, false, {
+                        fileName: "src/pages/ImageGenerator/imageGenerator.js",
+                        lineNumber: 90,
+                        columnNumber: 11
+                    }, undefined))
+            }, void 0, false, {
+                fileName: "src/pages/ImageGenerator/imageGenerator.js",
+                lineNumber: 88,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/ImageGenerator/imageGenerator.js",
-        lineNumber: 56,
+        lineNumber: 69,
         columnNumber: 5
     }, undefined);
 };
-_s(ImageGenerator, "6lwTsYI17YlGPj76CqSkPIP6WOQ=");
+_s(ImageGenerator, "HtBi8PcZu2J/7D57MHIsyRAhciM=");
 _c = ImageGenerator;
 exports.default = ImageGenerator;
 var _c;

@@ -8,11 +8,12 @@ const APIKEY = process.env.API_KEY ;  //provide your API KEY
 
 const ImageGenerator = () => {
   const cValue = useContext(PointsContext);
-  const [image_url, setImg_url] = useState("/");
+  const [imageUrls, setImageUrls] = useState([]); // Store an array of image URLs
   const [error, setError] = useState(null); 
   const inputRef = useRef(null);
-  const [i, setI]=useState(0);
   const [searchHistory, setSearchHistory] = useState([]); // Add this state to store search history
+  const [currentPage, setCurrentPage] = useState(1); // Add this state to keep track of the current page
+  const [totalPages, setTotalPages] = useState(1); // Add this state to keep track of the total pages
 
   useEffect(() => {
     // Read search history from localStorage
@@ -36,15 +37,13 @@ const ImageGenerator = () => {
 
       cValue.setUserPoints(cValue.userPoints - 1);
       
-      const res = await fetch(`https://api.unsplash.com/search/photos?client_id=${APIKEY}&page=1&query=${inputRef.current.value}`, 
+      const res = await fetch(`https://api.unsplash.com/search/photos?client_id=${APIKEY}&page=${currentPage}&query=${inputRef.current.value}`, 
       );
       const data = await res.json();
       console.log(data);    
-      const imageUrl = data.results[i].urls.raw;
-      setImg_url(imageUrl);
-
-      // Add current search query to search history
-      setSearchHistory((prevHistory) => [...prevHistory, inputRef.current.value]);
+      const imageUrlsArray = data.results.map(result => result.urls.raw);
+      setImageUrls(imageUrlsArray.slice(0, 9)); // Show only 9 results per page
+      setTotalPages(data.total_pages);
     } 
     catch (err) {
       console.error(err);
@@ -52,24 +51,44 @@ const ImageGenerator = () => {
     }
   };
 
+  const handleNextPage = async () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+      handleClick();
+    }
+  };
+
+  const handlePrevPage = async () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+      handleClick();
+    }
+  };
+
   return (
     <div>
       <Navbar page="imageGenerator" />
-      <div className="image-generator-main-container">
-        {error && (
-          <div className="error-message">
-            {error}
-          </div>
-        )}
-        <img src={image_url === "/"? default_image : image_url} />
-          <button class="prev-move" onClick={()=>{setI(i-1); handleClick();}}>Prev</button>
-          <button class="next-move" onClick={()=>{setI(i+1); handleClick();}}>Next</button>
-        <div className="image-generator-search-container">
-          <div className="image-search">
-            <input type="text" ref={inputRef} />
-            <button onClick={handleClick}>Generate</button>
-          </div>
+      <div className="image-generator-search-container">
+        <div className="image-search">
+          <input type="text" ref={inputRef} />
+          <button onClick={handleClick}>Generate</button>
         </div>
+        <div className="pagination">
+          <button onClick={handlePrevPage} disabled={currentPage === 1}>
+            Prev
+          </button>
+          <span>
+            Page {currentPage} of {totalPages}
+          </span>
+          <button onClick={handleNextPage} disabled={currentPage === totalPages}>
+            Next
+          </button>
+        </div>
+      </div>
+      <div className="image-grid">
+        {imageUrls.map((imageUrl, index) => (
+          <img key={index} src={imageUrl}  />
+        ))}
       </div>
     </div>
   );
