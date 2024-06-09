@@ -15,7 +15,7 @@ const parent = document.getElementById("root");
 const root = ReactDOM.createRoot(parent);
 const PORT = process.env.PORT || 1234
 const App = ()=>{
-    const [userPoints, setUserPoints] = useState(20);
+    const [userPoints, setUserPoints] = useState(8);
     const [isLoggedIn, setIsLoggedIn] = useState(()=>{
         if(localStorage.getItem('authorization')){
             return true;
@@ -37,7 +37,7 @@ const App = ()=>{
         },
         {
             path: "/image-generator",
-            element: isLoggedIn? <ImageGenerator/> : <Navigate to='/login' />
+            element: (userPoints - 1 >= 0)? <ImageGenerator/> : <Navigate to='/login' />
         },
         {
             path: '/history',

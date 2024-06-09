@@ -24,12 +24,14 @@ const Navbar = (props) => {
             <div className="right" style={{padding: '4px', color: 'brown'}}>
                 {contextValues.userPoints}
                 <Link to="/signup" style={customColor('signup')}>Signup</Link>
-                <Link to="/login" style={customColor('login')}>Login</Link>
-            </div>
-            {contextValues.isLoggedIn?
+                <Link to="/login" style={customColor('login')}>
+                {contextValues.isLoggedIn?
                 <button onClick={contextValues.logout}>Logout</button>
                 :<button onClick={contextValues.login}>Login</button>
-            }
+                }
+                </Link>
+            </div>
+            
         </div>
     )
 }

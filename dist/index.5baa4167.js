@@ -2980,7 +2980,7 @@ const root = (0, _clientDefault.default).createRoot(parent);
 const PORT = 1234;
 const App = ()=>{
     _s();
-    const [userPoints, setUserPoints] = (0, _react.useState)(20);
+    const [userPoints, setUserPoints] = (0, _react.useState)(8);
     const [isLoggedIn, setIsLoggedIn] = (0, _react.useState)(()=>{
         if (localStorage.getItem("authorization")) return true;
         else return false;
@@ -3003,16 +3003,16 @@ const App = ()=>{
         },
         {
             path: "/image-generator",
-            element: isLoggedIn ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _imageGeneratorJsDefault.default), {}, void 0, false, {
+            element: userPoints - 1 >= 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _imageGeneratorJsDefault.default), {}, void 0, false, {
                 fileName: "app.js",
                 lineNumber: 40,
-                columnNumber: 34
+                columnNumber: 45
             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
                 to: "/login"
             }, void 0, false, {
                 fileName: "app.js",
                 lineNumber: 40,
-                columnNumber: 54
+                columnNumber: 65
             }, undefined)
         },
         {
@@ -3069,7 +3069,7 @@ const App = ()=>{
         columnNumber: 9
     }, undefined);
 };
-_s(App, "AjPa//wa6IhZ9CfR5SMjsDN+AMo=");
+_s(App, "QJQUZr7wLJsxDPFgFIujQp1kdsM=");
 _c = App;
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
     fileName: "app.js",
@@ -27411,7 +27411,21 @@ const Navbar = (props)=>{
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                         to: "/login",
                         style: customColor("login"),
-                        children: "Login"
+                        children: contextValues.isLoggedIn ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            onClick: contextValues.logout,
+                            children: "Logout"
+                        }, void 0, false, {
+                            fileName: "src/pages/common/Navbar/navbar.js",
+                            lineNumber: 29,
+                            columnNumber: 17
+                        }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            onClick: contextValues.login,
+                            children: "Login"
+                        }, void 0, false, {
+                            fileName: "src/pages/common/Navbar/navbar.js",
+                            lineNumber: 30,
+                            columnNumber: 18
+                        }, undefined)
                     }, void 0, false, {
                         fileName: "src/pages/common/Navbar/navbar.js",
                         lineNumber: 27,
@@ -27422,21 +27436,6 @@ const Navbar = (props)=>{
                 fileName: "src/pages/common/Navbar/navbar.js",
                 lineNumber: 24,
                 columnNumber: 13
-            }, undefined),
-            contextValues.isLoggedIn ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                onClick: contextValues.logout,
-                children: "Logout"
-            }, void 0, false, {
-                fileName: "src/pages/common/Navbar/navbar.js",
-                lineNumber: 30,
-                columnNumber: 17
-            }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                onClick: contextValues.login,
-                children: "Login"
-            }, void 0, false, {
-                fileName: "src/pages/common/Navbar/navbar.js",
-                lineNumber: 31,
-                columnNumber: 18
             }, undefined)
         ]
     }, void 0, true, {
@@ -34990,18 +34989,16 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactRouterDom = require("react-router-dom");
 var _pointsContext = require("../../context/pointsContext");
 var _pointsContextDefault = parcelHelpers.interopDefault(_pointsContext);
 var _navbar = require("../common/Navbar/navbar");
-var _loginCss = require("./login.css");
 var _navbarDefault = parcelHelpers.interopDefault(_navbar);
+var _react = require("react");
+var _loginCss = require("./login.css");
 var _s = $RefreshSig$();
 const Login = ()=>{
     _s();
-    const login = (0, _react.useContext)((0, _pointsContextDefault.default));
+    const { login } = (0, _react.useContext)((0, _pointsContextDefault.default));
     const [email, setEmail] = (0, _react.useState)("");
     const [password, setPassword] = (0, _react.useState)("");
     const handleClick = async ()=>{
@@ -35028,7 +35025,7 @@ const Login = ()=>{
                 page: "login"
             }, void 0, false, {
                 fileName: "src/pages/login/login.js",
-                lineNumber: 35,
+                lineNumber: 31,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35046,17 +35043,17 @@ const Login = ()=>{
                                         src: "https://www.google.com/images/branding/product/1x/gmail_48dp.png"
                                     }, void 0, false, {
                                         fileName: "src/pages/login/login.js",
-                                        lineNumber: 38,
+                                        lineNumber: 34,
                                         columnNumber: 107
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/pages/login/login.js",
-                                    lineNumber: 38,
+                                    lineNumber: 34,
                                     columnNumber: 75
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/pages/login/login.js",
-                                lineNumber: 38,
+                                lineNumber: 34,
                                 columnNumber: 21
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -35068,23 +35065,23 @@ const Login = ()=>{
                                         src: "https://th.bing.com/th/id/R.14f8d0d8ea255a03471032d79087fdf0?rik=Jcph23UZL08iCA&riu=http%3a%2f%2f1000logos.net%2fwp-content%2fuploads%2f2017%2f03%2fColor-of-the-LinkedIn-Logo.jpg&ehk=hT5Ibkg%2fFPa%2f7TPm%2fs2TP8Fxdd7ySQQBuZmn88xh5j0%3d&risl=&pid=ImgRaw&r=0"
                                     }, void 0, false, {
                                         fileName: "src/pages/login/login.js",
-                                        lineNumber: 39,
+                                        lineNumber: 35,
                                         columnNumber: 107
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/pages/login/login.js",
-                                    lineNumber: 39,
+                                    lineNumber: 35,
                                     columnNumber: 77
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/pages/login/login.js",
-                                lineNumber: 39,
+                                lineNumber: 35,
                                 columnNumber: 21
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/pages/login/login.js",
-                        lineNumber: 37,
+                        lineNumber: 33,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -35093,7 +35090,7 @@ const Login = ()=>{
                         onChange: (e)=>setEmail(e.target.value)
                     }, void 0, false, {
                         fileName: "src/pages/login/login.js",
-                        lineNumber: 41,
+                        lineNumber: 37,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -35102,30 +35099,31 @@ const Login = ()=>{
                         onChange: (e)=>setPassword(e.target.value)
                     }, void 0, false, {
                         fileName: "src/pages/login/login.js",
-                        lineNumber: 42,
+                        lineNumber: 38,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        onClick: handleClick
+                        onClick: handleClick,
+                        children: "Login"
                     }, void 0, false, {
                         fileName: "src/pages/login/login.js",
-                        lineNumber: 43,
+                        lineNumber: 39,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/login/login.js",
-                lineNumber: 36,
+                lineNumber: 32,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/login/login.js",
-        lineNumber: 34,
+        lineNumber: 30,
         columnNumber: 9
     }, undefined);
 };
-_s(Login, "lBQa2Py47epvnMjrNoX1/IA5+OY=");
+_s(Login, "wppFossD1OI4CrCtdS42cKFeeqw=");
 _c = Login;
 exports.default = Login;
 var _c;
@@ -35136,6 +35134,6 @@ $RefreshReg$(_c, "Login");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../../context/pointsContext":"3EBhw","../common/Navbar/navbar":"2Xn2v","react":"21dqq","./login.css":"d6Te3","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe"}],"d6Te3":[function() {},{}]},["hPIHA","1xC6H","igcvL"], "igcvL", "parcelRequire4ba1")
+},{"react/jsx-dev-runtime":"iTorj","../../context/pointsContext":"3EBhw","../common/Navbar/navbar":"2Xn2v","react":"21dqq","./login.css":"d6Te3","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"d6Te3":[function() {},{}]},["hPIHA","1xC6H","igcvL"], "igcvL", "parcelRequire4ba1")
 
 //# sourceMappingURL=index.5baa4167.js.map
