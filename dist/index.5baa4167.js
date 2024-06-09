@@ -34990,16 +34990,18 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
 var _pointsContext = require("../../context/pointsContext");
 var _pointsContextDefault = parcelHelpers.interopDefault(_pointsContext);
 var _navbar = require("../common/Navbar/navbar");
-var _navbarDefault = parcelHelpers.interopDefault(_navbar);
-var _react = require("react");
 var _loginCss = require("./login.css");
+var _navbarDefault = parcelHelpers.interopDefault(_navbar);
 var _s = $RefreshSig$();
 const Login = ()=>{
     _s();
-    const { login } = (0, _react.useContext)((0, _pointsContextDefault.default));
+    const login = (0, _react.useContext)((0, _pointsContextDefault.default));
     const [email, setEmail] = (0, _react.useState)("");
     const [password, setPassword] = (0, _react.useState)("");
     const handleClick = async ()=>{
@@ -35026,7 +35028,7 @@ const Login = ()=>{
                 page: "login"
             }, void 0, false, {
                 fileName: "src/pages/login/login.js",
-                lineNumber: 31,
+                lineNumber: 35,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35044,17 +35046,17 @@ const Login = ()=>{
                                         src: "https://www.google.com/images/branding/product/1x/gmail_48dp.png"
                                     }, void 0, false, {
                                         fileName: "src/pages/login/login.js",
-                                        lineNumber: 34,
+                                        lineNumber: 38,
                                         columnNumber: 107
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/pages/login/login.js",
-                                    lineNumber: 34,
+                                    lineNumber: 38,
                                     columnNumber: 75
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/pages/login/login.js",
-                                lineNumber: 34,
+                                lineNumber: 38,
                                 columnNumber: 21
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -35066,23 +35068,23 @@ const Login = ()=>{
                                         src: "https://th.bing.com/th/id/R.14f8d0d8ea255a03471032d79087fdf0?rik=Jcph23UZL08iCA&riu=http%3a%2f%2f1000logos.net%2fwp-content%2fuploads%2f2017%2f03%2fColor-of-the-LinkedIn-Logo.jpg&ehk=hT5Ibkg%2fFPa%2f7TPm%2fs2TP8Fxdd7ySQQBuZmn88xh5j0%3d&risl=&pid=ImgRaw&r=0"
                                     }, void 0, false, {
                                         fileName: "src/pages/login/login.js",
-                                        lineNumber: 35,
+                                        lineNumber: 39,
                                         columnNumber: 107
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/pages/login/login.js",
-                                    lineNumber: 35,
+                                    lineNumber: 39,
                                     columnNumber: 77
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/pages/login/login.js",
-                                lineNumber: 35,
+                                lineNumber: 39,
                                 columnNumber: 21
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/pages/login/login.js",
-                        lineNumber: 33,
+                        lineNumber: 37,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -35091,7 +35093,7 @@ const Login = ()=>{
                         onChange: (e)=>setEmail(e.target.value)
                     }, void 0, false, {
                         fileName: "src/pages/login/login.js",
-                        lineNumber: 37,
+                        lineNumber: 41,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -35100,31 +35102,30 @@ const Login = ()=>{
                         onChange: (e)=>setPassword(e.target.value)
                     }, void 0, false, {
                         fileName: "src/pages/login/login.js",
-                        lineNumber: 38,
+                        lineNumber: 42,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        onClick: handleClick,
-                        children: "Login"
+                        onClick: handleClick
                     }, void 0, false, {
                         fileName: "src/pages/login/login.js",
-                        lineNumber: 39,
+                        lineNumber: 43,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/login/login.js",
-                lineNumber: 32,
+                lineNumber: 36,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/login/login.js",
-        lineNumber: 30,
+        lineNumber: 34,
         columnNumber: 9
     }, undefined);
 };
-_s(Login, "wppFossD1OI4CrCtdS42cKFeeqw=");
+_s(Login, "lBQa2Py47epvnMjrNoX1/IA5+OY=");
 _c = Login;
 exports.default = Login;
 var _c;
@@ -35135,6 +35136,6 @@ $RefreshReg$(_c, "Login");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../../context/pointsContext":"3EBhw","../common/Navbar/navbar":"2Xn2v","react":"21dqq","./login.css":"d6Te3","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"d6Te3":[function() {},{}]},["hPIHA","1xC6H","igcvL"], "igcvL", "parcelRequire4ba1")
+},{"react/jsx-dev-runtime":"iTorj","../../context/pointsContext":"3EBhw","../common/Navbar/navbar":"2Xn2v","react":"21dqq","./login.css":"d6Te3","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe"}],"d6Te3":[function() {},{}]},["hPIHA","1xC6H","igcvL"], "igcvL", "parcelRequire4ba1")
 
 //# sourceMappingURL=index.5baa4167.js.map
