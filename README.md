@@ -1,17 +1,3 @@
-# React Setup
-
-make 3 basic files
---> index.html
---> styles.css
---> app.js
-
-initialize npm repo:
---> npm init -y
-
-install dependencies:
---> npm i react
---> npm i react-dom
---> npm i parcel
-
-run the app:
---> npx parcel index.html
+npm run build
+Run locally requires API KEY by creatina an .env file. and installing parcel dependencies
+npm run to run on Local Host
