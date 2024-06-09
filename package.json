@@ -3,12 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "source": "index.html",
-  
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "parcel build --dist-dir public"
-
   },
   "keywords": [],
   "author": "",
@@ -20,6 +18,7 @@
     "react-router-dom": "^6.23.1"
   },
   "devDependencies": {
+    "buffer": "^6.0.3",
     "process": "^0.11.10"
   }
 }

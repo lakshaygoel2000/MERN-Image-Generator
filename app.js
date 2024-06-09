@@ -37,7 +37,7 @@ const App = ()=>{
         },
         {
             path: "/image-generator",
-            element: (userPoints - 1 >= 0)? <ImageGenerator/> : <Navigate to='/login' />
+            element: (userPoints - 1 >= 0)? <ImageGenerator/> : isLoggedIn? <ImageGenerator/> : <Navigate to='/login' />
         },
         {
             path: '/history',

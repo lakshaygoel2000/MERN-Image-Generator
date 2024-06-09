@@ -3007,12 +3007,16 @@ const App = ()=>{
                 fileName: "app.js",
                 lineNumber: 40,
                 columnNumber: 45
+            }, undefined) : isLoggedIn ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _imageGeneratorJsDefault.default), {}, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 40,
+                columnNumber: 77
             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
                 to: "/login"
             }, void 0, false, {
                 fileName: "app.js",
                 lineNumber: 40,
-                columnNumber: 65
+                columnNumber: 97
             }, undefined)
         },
         {
