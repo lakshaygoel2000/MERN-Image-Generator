@@ -34502,6 +34502,7 @@ const ImageGenerator = ()=>{
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                                 type: "text",
+                                placeholder: "Search Query",
                                 ref: inputRef
                             }, void 0, false, {
                                 fileName: "src/pages/ImageGenerator/imageGenerator.js",

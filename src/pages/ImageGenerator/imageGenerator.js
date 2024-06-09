@@ -70,7 +70,7 @@ const ImageGenerator = () => {
       <Navbar page="imageGenerator" />
       <div className="image-generator-search-container">
         <div className="image-search">
-          <input type="text" ref={inputRef} />
+          <input type="text" placeholder="Search Query" ref={inputRef} />
           <button onClick={handleClick}>Generate</button>
         </div>
         <div className="pagination">
