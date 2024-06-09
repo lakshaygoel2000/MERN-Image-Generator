@@ -34660,16 +34660,32 @@ const HistoryPage = ()=>{
     _s();
     const [searchHistory, setSearchHistory] = (0, _react.useState)([]);
     (0, _react.useEffect)(()=>{
-        const storedHistory = localStorage.getItem("searchHistory");
-        if (storedHistory) {
-            const history = JSON.parse(storedHistory);
-            console.log("History:", history); // Add a console log to check the data
-            setSearchHistory(history.reverse()); // Reverse the history array
-        }
+        fetch("data.json").then((response)=>response.json()).then((data)=>{
+            setSearchHistory(data.searchHistory);
+        });
     }, []);
+    const handleSearch = (searchTerm)=>{
+        const newSearchHistory = [
+            ...searchHistory,
+            searchTerm
+        ];
+        setSearchHistory(newSearchHistory);
+        updateDataJson(newSearchHistory);
+    };
     const handleClearHistory = ()=>{
-        localStorage.removeItem("searchHistory");
         setSearchHistory([]);
+        updateDataJson([]);
+    };
+    const updateDataJson = (newSearchHistory)=>{
+        fetch("data.json", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                searchHistory: newSearchHistory
+            })
+        });
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
@@ -34677,7 +34693,7 @@ const HistoryPage = ()=>{
                 page: "history"
             }, void 0, false, {
                 fileName: "src/pages/HistoryPage/historyPage.js",
-                lineNumber: 25,
+                lineNumber: 38,
                 columnNumber: 7
             }, undefined),
             searchHistory.length > 0 && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34687,13 +34703,13 @@ const HistoryPage = ()=>{
                     children: "Clear History"
                 }, void 0, false, {
                     fileName: "src/pages/HistoryPage/historyPage.js",
-                    lineNumber: 28,
-                    columnNumber: 13
+                    lineNumber: 41,
+                    columnNumber: 11
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/HistoryPage/historyPage.js",
-                lineNumber: 27,
-                columnNumber: 13
+                lineNumber: 40,
+                columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "history-main-container",
@@ -34701,18 +34717,18 @@ const HistoryPage = ()=>{
                         item: item
                     }, index, false, {
                         fileName: "src/pages/HistoryPage/historyPage.js",
-                        lineNumber: 34,
-                        columnNumber: 13
+                        lineNumber: 46,
+                        columnNumber: 11
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/pages/HistoryPage/historyPage.js",
-                lineNumber: 32,
-                columnNumber: 9
+                lineNumber: 44,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/HistoryPage/historyPage.js",
-        lineNumber: 24,
+        lineNumber: 37,
         columnNumber: 5
     }, undefined);
 };
