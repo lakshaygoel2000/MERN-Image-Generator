@@ -2,11 +2,14 @@
   "name": "day14",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "source": "index.html",
+  
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "build": "parcel build --dist-dir public"
+
   },
   "keywords": [],
   "author": "",
