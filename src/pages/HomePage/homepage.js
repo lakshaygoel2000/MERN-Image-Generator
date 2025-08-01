@@ -1,7 +1,7 @@
 import Navbar from "../common/Navbar/navbar";
 import { Link } from 'react-router-dom';
 import "./homepage.css";
-import bgImg from '../../../public/bg-img2.png';
+import bgImg from '../../assets/bg-img2.png';
 
 const HomePage = (props) => {
     return (
