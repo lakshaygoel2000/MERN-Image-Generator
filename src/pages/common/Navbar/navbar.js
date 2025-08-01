@@ -9,7 +9,7 @@ const Navbar = (props) => {
     const page = props.page;
 
     const customColor = (x) => {
-        return {color: page=== x ?'Black':'white'}
+        return {color: page=== x ?'dimgray':'white'}
     }
 
     return(
@@ -21,10 +21,11 @@ const Navbar = (props) => {
                 {/* <Link to="/contact" >Contact Us</Link>
                 <Link to="/help" >Help</Link> */}
             </div>
-            <div className="right" style={{padding: '4px', color: 'brown'}}>
-                {contextValues.userPoints}
+            
+            <div className="right" style={{padding: '4px', color: 'white'}}>
+                {contextValues.isLoggedIn ? <span>{contextValues.userPoints}</span> : ""}
                 <Link to="/signup" style={customColor('signup')}>Signup</Link>
-                <Link to="/login" style={customColor('login')}>
+                <Link to="/signup" style={customColor('signup')}>
                 {contextValues.isLoggedIn?
                 <button onClick={contextValues.logout}>Logout</button>
                 :<button onClick={contextValues.login}>Login</button>

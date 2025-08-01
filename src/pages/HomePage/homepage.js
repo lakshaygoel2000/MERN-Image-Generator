@@ -1,19 +1,26 @@
 import Navbar from "../common/Navbar/navbar";
-import Imagegenerator from "../ImageGenerator/imageGenerator";
+import { Link } from 'react-router-dom';
 import "./homepage.css";
-import {Link} from 'react-router-dom';
+import bgImg from '../../../public/bg-img2.png';
 
 const HomePage = (props) => {
-    return(
-        <div> 
-            <Navbar page="home"/>
-                <div class= "content">
-                    <h1>Image Generator</h1>
-                    <p>Generate designs with a powerful online image generator. Simplify your process to an image in seconds using just text descriptions.</p>
-                    <button><Link to="/image-generator">Generate Images Now</Link></button>
-                </div>
-        </div>
-    )
+    return (
+        <main> 
+            <Navbar page="home" />
+            <div className="background-img" aria-label="Background image">
+                <img src={bgImg} alt="Background" />
+            </div>
+            <section className="content">
+                <h1>Pixify Image</h1>
+                <p>Try the ultimate Image Search. Access the most advanced image search model.</p>
+                <button className="content-btn">
+                    <Link to="/image-generator" className="btn-text">
+                        Generate image
+                    </Link>
+                </button>
+            </section>
+        </main>
+    );
 }
 
 export default HomePage;

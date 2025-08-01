@@ -9,7 +9,6 @@ import PointsContext from "./src/context/pointsContext.js";
 import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import HistoryInformationPage from "./src/pages/HistoryInformationPage/historyInformationPage.js";
 import Signup from "./src/pages/signup/signup.js";
-import Login from "./src/pages/login/login.js";
 
 const parent = document.getElementById("root");
 const root = ReactDOM.createRoot(parent);
@@ -37,7 +36,7 @@ const App = ()=>{
         },
         {
             path: "/image-generator",
-            element: (userPoints - 1 >= 0)? <ImageGenerator/> : isLoggedIn? <ImageGenerator/> : <Navigate to='/login' />
+            element: (userPoints - 1 >= 0)? <ImageGenerator/> : isLoggedIn? <ImageGenerator/> : <Navigate to='/' />
         },
         {
             path: '/history',
@@ -50,10 +49,6 @@ const App = ()=>{
         {
             path: '/signup',
             element: <Signup/>
-        },
-        {
-            path: '/login',
-            element: <Login/>
         },
     ]);
 

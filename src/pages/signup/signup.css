@@ -1,50 +1,57 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
-
-.signup-box { 
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background-color: #fff;
-	padding: 20px;
-	border: 1px solid #616161;
-	border-radius: 10px;
-	width: 400px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  
-  }
-  
-  input {
-	width: 100%;
-	height: 40px;
-	margin-bottom: 20px;
-	padding: 10px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-  }
-  
-  button{
-	width: 100%;
-	height: 40px;
-	background-color: rgb(145, 207, 0);
-	color: #000000;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-  }
-  .social-container {
-	margin: 20px 0;
+.signup-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 30px 40px;
+    border: 1px solid #616161;
+    border-radius: 12px;
+    width: 400px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif;
     display: flex;
-	justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
 }
 
-.social-container a {
-	align-items: center;
-	margin: 0 5px;
-	height: 40px;
-	width: 40px;
+.welcome-container{
+	padding: 10px;
+	margin-bottom: 2em;
 }
-img{
-    height: 40px;
+
+.signup-box input {
+    width: 100%;
+    height: 45px;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    outline: none;
 }
-  
+
+.signup-box input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.login-option{
+	display: flex;
+	gap: 2px;
+	min-width: 20em;
+	justify-content: center;
+}
+
+.login{
+	padding: 10px 20px;
+	border: none;
+	font-size: medium;
+	text-transform: uppercase;
+	transition: 0.3s ease;
+}
+.login:hover{
+	background-color: #afafaf;
+	cursor: pointer;
+}

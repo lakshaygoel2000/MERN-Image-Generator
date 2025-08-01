@@ -1,14 +1,16 @@
 .header-parent-container{
-    box-shadow: rgba(218, 216, 210, 0.1) 0px 10px 10px -10px;
+    box-shadow: rgba(148, 143, 126, 0.1) 0px 10px 10px -10px;
     display: flex;
-    background-color: rgb(145, 207, 0);
+    background-color: rgb(10, 10, 10);
     align-items: center;
     justify-content: space-between;
-    padding: 28px 16px;
-    color: white;
+    padding: 10px 20px;
+    color: rgb(0, 0, 0);
+    font-size: medium;
+    text-transform: uppercase;
 
     a{
-        color: white;
+        color: black;
         text-decoration: none;
     }
 
@@ -27,8 +29,14 @@
     button{
         height: 40px;
         width: 100px;
-        background-color: rgb(255, 255, 255);
+        text-transform: uppercase;
+        font-weight: 600;
+        background-color: rgb(234, 234, 234);
         border: none;
-        border-radius: 20px;
+        border-radius: 10px;
+        transition: 0.3s ease;
+    }
+    button:hover{
+        background-color: rgb(185, 185, 185);
     }
 }

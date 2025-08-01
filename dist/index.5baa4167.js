@@ -2972,8 +2972,6 @@ var _historyInformationPageJs = require("./src/pages/HistoryInformationPage/hist
 var _historyInformationPageJsDefault = parcelHelpers.interopDefault(_historyInformationPageJs);
 var _signupJs = require("./src/pages/signup/signup.js");
 var _signupJsDefault = parcelHelpers.interopDefault(_signupJs);
-var _loginJs = require("./src/pages/login/login.js");
-var _loginJsDefault = parcelHelpers.interopDefault(_loginJs);
 var _s = $RefreshSig$();
 const parent = document.getElementById("root");
 const root = (0, _clientDefault.default).createRoot(parent);
@@ -2997,7 +2995,7 @@ const App = ()=>{
             path: "/",
             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homepageJsDefault.default), {}, void 0, false, {
                 fileName: "app.js",
-                lineNumber: 36,
+                lineNumber: 35,
                 columnNumber: 22
             }, undefined)
         },
@@ -3005,17 +3003,17 @@ const App = ()=>{
             path: "/image-generator",
             element: userPoints - 1 >= 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _imageGeneratorJsDefault.default), {}, void 0, false, {
                 fileName: "app.js",
-                lineNumber: 40,
+                lineNumber: 39,
                 columnNumber: 45
             }, undefined) : isLoggedIn ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _imageGeneratorJsDefault.default), {}, void 0, false, {
                 fileName: "app.js",
-                lineNumber: 40,
+                lineNumber: 39,
                 columnNumber: 77
             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
-                to: "/login"
+                to: "/"
             }, void 0, false, {
                 fileName: "app.js",
-                lineNumber: 40,
+                lineNumber: 39,
                 columnNumber: 97
             }, undefined)
         },
@@ -3023,7 +3021,7 @@ const App = ()=>{
             path: "/history",
             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _historyPageJsDefault.default), {}, void 0, false, {
                 fileName: "app.js",
-                lineNumber: 44,
+                lineNumber: 43,
                 columnNumber: 22
             }, undefined)
         },
@@ -3031,7 +3029,7 @@ const App = ()=>{
             path: "/history/:historyId",
             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _historyInformationPageJsDefault.default), {}, void 0, false, {
                 fileName: "app.js",
-                lineNumber: 48,
+                lineNumber: 47,
                 columnNumber: 22
             }, undefined)
         },
@@ -3039,15 +3037,7 @@ const App = ()=>{
             path: "/signup",
             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupJsDefault.default), {}, void 0, false, {
                 fileName: "app.js",
-                lineNumber: 52,
-                columnNumber: 22
-            }, undefined)
-        },
-        {
-            path: "/login",
-            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginJsDefault.default), {}, void 0, false, {
-                fileName: "app.js",
-                lineNumber: 56,
+                lineNumber: 51,
                 columnNumber: 22
             }, undefined)
         }
@@ -3064,12 +3054,12 @@ const App = ()=>{
             router: router
         }, void 0, false, {
             fileName: "app.js",
-            lineNumber: 68,
+            lineNumber: 63,
             columnNumber: 13
         }, undefined)
     }, void 0, false, {
         fileName: "app.js",
-        lineNumber: 61,
+        lineNumber: 56,
         columnNumber: 9
     }, undefined);
 };
@@ -3077,7 +3067,7 @@ _s(App, "QJQUZr7wLJsxDPFgFIujQp1kdsM=");
 _c = App;
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
     fileName: "app.js",
-    lineNumber: 73,
+    lineNumber: 68,
     columnNumber: 13
 }, undefined));
 var _c;
@@ -3088,7 +3078,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./src/pages/common/Navbar/navbar.js":"2Xn2v","./src/pages/HomePage/homepage.js":"a7cYD","./src/pages/ImageGenerator/imageGenerator.js":"gdARo","./src/pages/HistoryPage/historyPage.js":"bujso","./src/context/pointsContext.js":"3EBhw","react-router-dom":"9xmpe","./src/pages/HistoryInformationPage/historyInformationPage.js":"aeRD2","./src/pages/signup/signup.js":"1mTmW","./src/pages/login/login.js":"dnRSK","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./src/pages/common/Navbar/navbar.js":"2Xn2v","./src/pages/HomePage/homepage.js":"a7cYD","./src/pages/ImageGenerator/imageGenerator.js":"gdARo","./src/pages/HistoryPage/historyPage.js":"bujso","./src/context/pointsContext.js":"3EBhw","react-router-dom":"9xmpe","./src/pages/HistoryInformationPage/historyInformationPage.js":"aeRD2","./src/pages/signup/signup.js":"1mTmW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27353,7 +27343,7 @@ const Navbar = (props)=>{
     const page = props.page;
     const customColor = (x)=>{
         return {
-            color: page === x ? "Black" : "white"
+            color: page === x ? "dimgray" : "white"
         };
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27399,46 +27389,52 @@ const Navbar = (props)=>{
                 className: "right",
                 style: {
                     padding: "4px",
-                    color: "brown"
+                    color: "white"
                 },
                 children: [
-                    contextValues.userPoints,
+                    contextValues.isLoggedIn ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: contextValues.userPoints
+                    }, void 0, false, {
+                        fileName: "src/pages/common/Navbar/navbar.js",
+                        lineNumber: 26,
+                        columnNumber: 45
+                    }, undefined) : "",
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                         to: "/signup",
                         style: customColor("signup"),
                         children: "Signup"
                     }, void 0, false, {
                         fileName: "src/pages/common/Navbar/navbar.js",
-                        lineNumber: 26,
+                        lineNumber: 27,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        to: "/login",
-                        style: customColor("login"),
+                        to: "/signup",
+                        style: customColor("signup"),
                         children: contextValues.isLoggedIn ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                             onClick: contextValues.logout,
                             children: "Logout"
                         }, void 0, false, {
                             fileName: "src/pages/common/Navbar/navbar.js",
-                            lineNumber: 29,
+                            lineNumber: 30,
                             columnNumber: 17
                         }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                             onClick: contextValues.login,
                             children: "Login"
                         }, void 0, false, {
                             fileName: "src/pages/common/Navbar/navbar.js",
-                            lineNumber: 30,
+                            lineNumber: 31,
                             columnNumber: 18
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/pages/common/Navbar/navbar.js",
-                        lineNumber: 27,
+                        lineNumber: 28,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/common/Navbar/navbar.js",
-                lineNumber: 24,
+                lineNumber: 25,
                 columnNumber: 13
             }, undefined)
         ]
@@ -34350,12 +34346,12 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _navbar = require("../common/Navbar/navbar");
 var _navbarDefault = parcelHelpers.interopDefault(_navbar);
-var _imageGenerator = require("../ImageGenerator/imageGenerator");
-var _imageGeneratorDefault = parcelHelpers.interopDefault(_imageGenerator);
-var _homepageCss = require("./homepage.css");
 var _reactRouterDom = require("react-router-dom");
+var _homepageCss = require("./homepage.css");
+var _bgImg2Png = require("../../../public/bg-img2.png");
+var _bgImg2PngDefault = parcelHelpers.interopDefault(_bgImg2Png);
 const HomePage = (props)=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("main", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default), {
                 page: "home"
@@ -34365,41 +34361,59 @@ const HomePage = (props)=>{
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                class: "content",
+                className: "background-img",
+                "aria-label": "Background image",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                    src: (0, _bgImg2PngDefault.default),
+                    alt: "Background"
+                }, void 0, false, {
+                    fileName: "src/pages/HomePage/homepage.js",
+                    lineNumber: 11,
+                    columnNumber: 17
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/pages/HomePage/homepage.js",
+                lineNumber: 10,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
+                className: "content",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                        children: "Image Generator"
+                        children: "Pixify Image"
                     }, void 0, false, {
                         fileName: "src/pages/HomePage/homepage.js",
-                        lineNumber: 11,
-                        columnNumber: 21
+                        lineNumber: 14,
+                        columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        children: "Generate designs with a powerful online image generator. Simplify your process to an image in seconds using just text descriptions."
+                        children: "Try the ultimate Image Search. Access the most advanced image search model."
                     }, void 0, false, {
                         fileName: "src/pages/HomePage/homepage.js",
-                        lineNumber: 12,
-                        columnNumber: 21
+                        lineNumber: 15,
+                        columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "content-btn",
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                             to: "/image-generator",
-                            children: "Generate Images Now"
+                            className: "btn-text",
+                            children: "Generate image"
                         }, void 0, false, {
                             fileName: "src/pages/HomePage/homepage.js",
-                            lineNumber: 13,
-                            columnNumber: 29
+                            lineNumber: 17,
+                            columnNumber: 21
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/pages/HomePage/homepage.js",
-                        lineNumber: 13,
-                        columnNumber: 21
+                        lineNumber: 16,
+                        columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/HomePage/homepage.js",
-                lineNumber: 10,
-                columnNumber: 17
+                lineNumber: 13,
+                columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
@@ -34418,200 +34432,10 @@ $RefreshReg$(_c, "HomePage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../common/Navbar/navbar":"2Xn2v","../ImageGenerator/imageGenerator":"gdARo","./homepage.css":"dH0s0","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"gdARo":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$86e5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$86e5.prelude(module);
+},{"react/jsx-dev-runtime":"iTorj","../common/Navbar/navbar":"2Xn2v","./homepage.css":"dH0s0","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../../public/bg-img2.png":"jy3JY"}],"dH0s0":[function() {},{}],"jy3JY":[function(require,module,exports) {
+module.exports = require("16f11b20d0c33a5a").getBundleURL("1G2bZ") + "bg-img2.b15d878a.png" + "?" + Date.now();
 
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _pointsContext = require("../../context/pointsContext");
-var _pointsContextDefault = parcelHelpers.interopDefault(_pointsContext);
-var _navbar = require("../common/Navbar/navbar");
-var _navbarDefault = parcelHelpers.interopDefault(_navbar);
-var _imageGeneratorCss = require("./imageGenerator.css");
-var _defaultImagePng = require("../ImageGenerator/default_image.png");
-var _defaultImagePngDefault = parcelHelpers.interopDefault(_defaultImagePng);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _s = $RefreshSig$();
-const APIKEY = "pHkRlXECu8q2jCchPfs7dZNMoyuckJdx303s4frWov4;"; //provide your API KEY
-const ImageGenerator = ()=>{
-    _s();
-    const cValue = (0, _react.useContext)((0, _pointsContextDefault.default));
-    const [imageUrls, setImageUrls] = (0, _react.useState)([]);
-    const [error, setError] = (0, _react.useState)(null);
-    const inputRef = (0, _react.useRef)(null);
-    const [searchHistory, setSearchHistory] = (0, _react.useState)([]); // to store search history
-    const [currentPage, setCurrentPage] = (0, _react.useState)(1); //  to keep track of the current page
-    const [totalPages, setTotalPages] = (0, _react.useState)(1); // to keep track of the total pages
-    (0, _react.useEffect)(()=>{
-        // Read search history from localStorage
-        const storedHistory = localStorage.getItem("searchHistory");
-        if (storedHistory) setSearchHistory(JSON.parse(storedHistory));
-    }, []);
-    (0, _react.useEffect)(()=>{
-        // Writing search history to localStorage
-        localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
-    }, [
-        searchHistory
-    ]);
-    const handleClick = async ()=>{
-        try {
-            if (inputRef.current.value === "") {
-                setError("Please enter a prompt");
-                return;
-            }
-            cValue.setUserPoints(cValue.userPoints - 1);
-            const res = await fetch(`https://api.unsplash.com/search/photos?client_id=${APIKEY}&page=${currentPage}&query=${inputRef.current.value}`);
-            const data = await res.json();
-            console.log(data);
-            const imageUrlsArray = data.results.map((result)=>result.urls.small);
-            setImageUrls(imageUrlsArray.slice(0, 9)); // Show only 9 results per page
-            setTotalPages(data.total_pages);
-            setSearchHistory((prevHistory)=>[
-                    ...prevHistory,
-                    inputRef.current.value
-                ]);
-        } catch (err) {
-            console.error(err);
-            setError(err.message);
-        }
-    };
-    const handleNextPage = async ()=>{
-        if (currentPage < totalPages) {
-            setCurrentPage(currentPage + 1);
-            handleClick();
-        }
-    };
-    const handlePrevPage = async ()=>{
-        if (currentPage > 1) {
-            setCurrentPage(currentPage - 1);
-            handleClick();
-        }
-    };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default), {
-                page: "imageGenerator"
-            }, void 0, false, {
-                fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                lineNumber: 71,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "image-generator-search-container",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "image-search",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                type: "text",
-                                placeholder: "Search Query",
-                                ref: inputRef
-                            }, void 0, false, {
-                                fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                                lineNumber: 74,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                onClick: handleClick,
-                                children: "Generate"
-                            }, void 0, false, {
-                                fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                                lineNumber: 75,
-                                columnNumber: 11
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                        lineNumber: 73,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "pagination",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                onClick: handlePrevPage,
-                                disabled: currentPage === 1,
-                                children: "Prev"
-                            }, void 0, false, {
-                                fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                                lineNumber: 78,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                children: [
-                                    "Page ",
-                                    currentPage,
-                                    " of ",
-                                    totalPages
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                                lineNumber: 81,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                onClick: handleNextPage,
-                                disabled: currentPage === totalPages,
-                                children: "Next"
-                            }, void 0, false, {
-                                fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                                lineNumber: 84,
-                                columnNumber: 11
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                        lineNumber: 77,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                lineNumber: 72,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "image-grid",
-                children: imageUrls.map((imageUrl, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                        src: imageUrl
-                    }, index, false, {
-                        fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                        lineNumber: 91,
-                        columnNumber: 11
-                    }, undefined))
-            }, void 0, false, {
-                fileName: "src/pages/ImageGenerator/imageGenerator.js",
-                lineNumber: 89,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/pages/ImageGenerator/imageGenerator.js",
-        lineNumber: 70,
-        columnNumber: 5
-    }, undefined);
-};
-_s(ImageGenerator, "HtBi8PcZu2J/7D57MHIsyRAhciM=");
-_c = ImageGenerator;
-exports.default = ImageGenerator;
-var _c;
-$RefreshReg$(_c, "ImageGenerator");
-
-  $parcel$ReactRefreshHelpers$86e5.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","../../context/pointsContext":"3EBhw","../common/Navbar/navbar":"2Xn2v","./imageGenerator.css":"2Qwzt","../ImageGenerator/default_image.png":"l1h7I","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2Qwzt":[function() {},{}],"l1h7I":[function(require,module,exports) {
-module.exports = require("b30f54fa246e4c84").getBundleURL("1G2bZ") + "default_image.769e86c1.png" + "?" + Date.now();
-
-},{"b30f54fa246e4c84":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+},{"16f11b20d0c33a5a":"lgJ39"}],"lgJ39":[function(require,module,exports) {
 "use strict";
 var bundleURL = {};
 function getBundleURLCached(id) {
@@ -34646,7 +34470,255 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"dH0s0":[function() {},{}],"bujso":[function(require,module,exports) {
+},{}],"gdARo":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$86e5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$86e5.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _pointsContext = require("../../context/pointsContext");
+var _pointsContextDefault = parcelHelpers.interopDefault(_pointsContext);
+var _navbar = require("../common/Navbar/navbar");
+var _navbarDefault = parcelHelpers.interopDefault(_navbar);
+var _imageGeneratorCss = require("./imageGenerator.css");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _s = $RefreshSig$();
+const APIKEY = "pHkRlXECu8q2jCchPfs7dZNMoyuckJdx303s4frWov4"; //provide your API KEY
+const ImageGenerator = ()=>{
+    _s();
+    const cValue = (0, _react.useContext)((0, _pointsContextDefault.default));
+    const [imageUrls, setImageUrls] = (0, _react.useState)([]);
+    const [error, setError] = (0, _react.useState)(null);
+    const [loading, setLoading] = (0, _react.useState)(false);
+    const inputRef = (0, _react.useRef)(null);
+    const [searchHistory, setSearchHistory] = (0, _react.useState)([]); // to store search history
+    const [currentPage, setCurrentPage] = (0, _react.useState)(1); //  to keep track of the current page
+    const [totalPages, setTotalPages] = (0, _react.useState)(1); // to keep track of the total pages
+    (0, _react.useEffect)(()=>{
+        // Read search history from localStorage
+        const storedHistory = localStorage.getItem("searchHistory");
+        if (storedHistory) setSearchHistory(JSON.parse(storedHistory));
+    }, []);
+    (0, _react.useEffect)(()=>{
+        // Writing search history to localStorage
+        localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+    }, [
+        searchHistory
+    ]);
+    const fetchImages = async (page, query)=>{
+        setLoading(true);
+        setError(null);
+        try {
+            const res = await fetch(`https://api.unsplash.com/search/photos?client_id=${APIKEY}&page=${page}&query=${query}`);
+            if (!res.ok) throw new Error(`Error: ${res.status} ${res.statusText}`);
+            const data = await res.json();
+            const imageData = data.results.slice(0, 9).map((result)=>({
+                    url: result.urls.regular,
+                    slug: result.alt_description || Untitled,
+                    download: result.links.download
+                }));
+            // console.log(imageData);
+            setImageUrls(imageData);
+            setTotalPages(data.total_pages);
+        } catch (err) {
+            setError(err.message);
+            setImageUrls([]);
+        } finally{
+            setLoading(false);
+        }
+    };
+    const handleClick = async ()=>{
+        const query = inputRef.current.value.trim();
+        if (query === "") {
+            setError("Please enter a prompt");
+            return;
+        }
+        cValue.setUserPoints(cValue.userPoints - 1);
+        setCurrentPage(1);
+        setSearchHistory((prevHistory)=>[
+                ...prevHistory,
+                query
+            ]);
+        await fetchImages(1, query);
+    };
+    const handleNextPage = async ()=>{
+        if (currentPage < totalPages) {
+            const nextPage = currentPage + 1;
+            setCurrentPage(nextPage);
+            await fetchImages(nextPage, inputRef.current.value.trim());
+        }
+    };
+    const handlePrevPage = async ()=>{
+        if (currentPage > 1) {
+            const prevPage = currentPage - 1;
+            setCurrentPage(prevPage);
+            await fetchImages(prevPage, inputRef.current.value.trim());
+        }
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "img-generate-page",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default), {
+                page: "imageGenerator"
+            }, void 0, false, {
+                fileName: "src/pages/ImageGenerator/imageGenerator.js",
+                lineNumber: 87,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "image-generator-search-container",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "image-search",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                            type: "text",
+                            placeholder: "Search Query",
+                            ref: inputRef,
+                            onKeyDown: (e)=>{
+                                if (e.key === "Enter") handleClick();
+                            },
+                            "aria-label": "Search Query"
+                        }, void 0, false, {
+                            fileName: "src/pages/ImageGenerator/imageGenerator.js",
+                            lineNumber: 90,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            onClick: (e)=>handleClick(),
+                            className: "search-btn",
+                            disabled: loading,
+                            children: loading ? "Loading..." : "Search"
+                        }, void 0, false, {
+                            fileName: "src/pages/ImageGenerator/imageGenerator.js",
+                            lineNumber: 91,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/pages/ImageGenerator/imageGenerator.js",
+                    lineNumber: 89,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/pages/ImageGenerator/imageGenerator.js",
+                lineNumber: 88,
+                columnNumber: 7
+            }, undefined),
+            error && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "error-message",
+                role: "alert",
+                children: error
+            }, void 0, false, {
+                fileName: "src/pages/ImageGenerator/imageGenerator.js",
+                lineNumber: 96,
+                columnNumber: 17
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "image-grid",
+                children: imageUrls.length > 0 ? imageUrls.map((image, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "image-container",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                src: image.url,
+                                alt: `Generated result ${index + 1}`
+                            }, void 0, false, {
+                                fileName: "src/pages/ImageGenerator/imageGenerator.js",
+                                lineNumber: 101,
+                                columnNumber: 15
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "image-slug",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                    href: image.download,
+                                    target: "_blank",
+                                    rel: "noopener noreferrer",
+                                    children: image.slug
+                                }, void 0, false, {
+                                    fileName: "src/pages/ImageGenerator/imageGenerator.js",
+                                    lineNumber: 102,
+                                    columnNumber: 41
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/pages/ImageGenerator/imageGenerator.js",
+                                lineNumber: 102,
+                                columnNumber: 15
+                            }, undefined)
+                        ]
+                    }, index, true, {
+                        fileName: "src/pages/ImageGenerator/imageGenerator.js",
+                        lineNumber: 100,
+                        columnNumber: 13
+                    }, undefined)) : !loading
+            }, void 0, false, {
+                fileName: "src/pages/ImageGenerator/imageGenerator.js",
+                lineNumber: 97,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "pagination",
+                children: imageUrls.length > 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            onClick: handlePrevPage,
+                            disabled: currentPage === 1 || loading,
+                            children: "Prev"
+                        }, void 0, false, {
+                            fileName: "src/pages/ImageGenerator/imageGenerator.js",
+                            lineNumber: 112,
+                            columnNumber: 13
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            children: [
+                                "Page ",
+                                currentPage,
+                                " of ",
+                                totalPages
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/pages/ImageGenerator/imageGenerator.js",
+                            lineNumber: 115,
+                            columnNumber: 13
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            onClick: handleNextPage,
+                            disabled: currentPage === totalPages || loading,
+                            children: "Next"
+                        }, void 0, false, {
+                            fileName: "src/pages/ImageGenerator/imageGenerator.js",
+                            lineNumber: 118,
+                            columnNumber: 13
+                        }, undefined)
+                    ]
+                }, void 0, true) : ""
+            }, void 0, false, {
+                fileName: "src/pages/ImageGenerator/imageGenerator.js",
+                lineNumber: 109,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/pages/ImageGenerator/imageGenerator.js",
+        lineNumber: 86,
+        columnNumber: 5
+    }, undefined);
+};
+_s(ImageGenerator, "YdD6M9qYxYbo7ePPSb2qydSYoRE=");
+_c = ImageGenerator;
+exports.default = ImageGenerator;
+var _c;
+$RefreshReg$(_c, "ImageGenerator");
+
+  $parcel$ReactRefreshHelpers$86e5.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","../../context/pointsContext":"3EBhw","../common/Navbar/navbar":"2Xn2v","./imageGenerator.css":"2Qwzt","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2Qwzt":[function() {},{}],"bujso":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$a1a6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34688,6 +34760,20 @@ const HistoryPage = ()=>{
                 lineNumber: 25,
                 columnNumber: 7
             }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "history-main-container",
+                children: searchHistory.map((item, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _historyCardDefault.default), {
+                        item: item
+                    }, index, false, {
+                        fileName: "src/pages/HistoryPage/historyPage.js",
+                        lineNumber: 28,
+                        columnNumber: 13
+                    }, undefined))
+            }, void 0, false, {
+                fileName: "src/pages/HistoryPage/historyPage.js",
+                lineNumber: 26,
+                columnNumber: 9
+            }, undefined),
             searchHistory.length > 0 && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "history-clear-button",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -34695,27 +34781,13 @@ const HistoryPage = ()=>{
                     children: "Clear History"
                 }, void 0, false, {
                     fileName: "src/pages/HistoryPage/historyPage.js",
-                    lineNumber: 28,
+                    lineNumber: 33,
                     columnNumber: 13
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/HistoryPage/historyPage.js",
-                lineNumber: 27,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "history-main-container",
-                children: searchHistory.map((item, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _historyCardDefault.default), {
-                        item: item
-                    }, index, false, {
-                        fileName: "src/pages/HistoryPage/historyPage.js",
-                        lineNumber: 34,
-                        columnNumber: 13
-                    }, undefined))
-            }, void 0, false, {
-                fileName: "src/pages/HistoryPage/historyPage.js",
                 lineNumber: 32,
-                columnNumber: 9
+                columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
@@ -34735,7 +34807,7 @@ $RefreshReg$(_c, "HistoryPage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./historyPage.css":"ckjrN","./historyCard":"1Fyam","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../common/Navbar/navbar":"2Xn2v","react":"21dqq"}],"ckjrN":[function() {},{}],"1Fyam":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../common/Navbar/navbar":"2Xn2v","./historyPage.css":"ckjrN","./historyCard":"1Fyam","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ckjrN":[function() {},{}],"1Fyam":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$1bba = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34752,11 +34824,8 @@ const HistoryCard = ({ item })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "history-card",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-            children: [
-                "Search query: ",
-                item
-            ]
-        }, void 0, true, {
+            children: item
+        }, void 0, false, {
             fileName: "src/pages/HistoryPage/historyCard.js",
             lineNumber: 9,
             columnNumber: 7
@@ -34777,7 +34846,7 @@ $RefreshReg$(_c, "HistoryCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq","./historyCard.css":"8XbBj"}],"8XbBj":[function() {},{}],"aeRD2":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./historyCard.css":"8XbBj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8XbBj":[function() {},{}],"aeRD2":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$7875 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34874,25 +34943,25 @@ var _navbar = require("../common/Navbar/navbar");
 var _navbarDefault = parcelHelpers.interopDefault(_navbar);
 var _react = require("react");
 var _signupCss = require("./signup.css");
+var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 const Signup = ()=>{
     _s();
     const [email, setEmail] = (0, _react.useState)("");
     const [password, setPassword] = (0, _react.useState)("");
+    const navigate = (0, _reactRouterDom.useNavigate)();
     const handleClick = async ()=>{
-        if (!email && !password) return;
-        const res = await fetch(`${undefined}/api/v1/auth/signup`, {
-            headers: {
-                "Content-Type": "application/json"
-            },
-            method: "POST",
-            body: JSON.stringify({
-                email,
-                password
-            })
-        });
-        const data = await res.json();
-        console.log(data);
+        if (!email && !password) return alert("All fields are Required");
+        navigate("/image-generator");
+    // const res = await fetch(`${process.env.BACKEND_URL}/api/v1/auth/signup`, {
+    //     headers: {
+    //         "Content-Type": "application/json",
+    //     },
+    //     method: 'POST',
+    //     body: JSON.stringify({email, password})
+    // });
+    // const data = await res.json();
+    // console.log(data);
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
@@ -34900,105 +34969,91 @@ const Signup = ()=>{
                 page: "signup"
             }, void 0, false, {
                 fileName: "src/pages/signup/signup.js",
-                lineNumber: 26,
+                lineNumber: 29,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 class: "signup-box",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        class: "social-container",
+                        class: "welcome-container",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                            children: "Welcome to Pixify Image"
+                        }, void 0, false, {
+                            fileName: "src/pages/signup/signup.js",
+                            lineNumber: 32,
+                            columnNumber: 21
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/pages/signup/signup.js",
+                        lineNumber: 31,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        type: "text",
+                        placeholder: "\uD83D\uDC64 Username",
+                        onChange: (e)=>setEmail(e.target.value),
+                        required: true
+                    }, void 0, false, {
+                        fileName: "src/pages/signup/signup.js",
+                        lineNumber: 34,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        type: "password",
+                        placeholder: "\uD83D\uDD10 Password",
+                        onChange: (e)=>setPassword(e.target.value),
+                        required: true
+                    }, void 0, false, {
+                        fileName: "src/pages/signup/signup.js",
+                        lineNumber: 35,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "login-option",
                         children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                href: "https://accounts.google.com/",
-                                class: "social",
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                    class: "fab fa-google-plus-g",
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                        src: "https://www.google.com/images/branding/product/1x/gmail_48dp.png"
-                                    }, void 0, false, {
-                                        fileName: "src/pages/signup/signup.js",
-                                        lineNumber: 29,
-                                        columnNumber: 107
-                                    }, undefined)
-                                }, void 0, false, {
-                                    fileName: "src/pages/signup/signup.js",
-                                    lineNumber: 29,
-                                    columnNumber: 75
-                                }, undefined)
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                onClick: handleClick,
+                                className: "login",
+                                children: "Sign up"
                             }, void 0, false, {
                                 fileName: "src/pages/signup/signup.js",
-                                lineNumber: 29,
+                                lineNumber: 37,
                                 columnNumber: 21
                             }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                href: "https://www.linkedin.com/login",
-                                class: "social",
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                    class: "fab fa-linkedin-in",
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                        src: "https://th.bing.com/th/id/R.14f8d0d8ea255a03471032d79087fdf0?rik=Jcph23UZL08iCA&riu=http%3a%2f%2f1000logos.net%2fwp-content%2fuploads%2f2017%2f03%2fColor-of-the-LinkedIn-Logo.jpg&ehk=hT5Ibkg%2fFPa%2f7TPm%2fs2TP8Fxdd7ySQQBuZmn88xh5j0%3d&risl=&pid=ImgRaw&r=0"
-                                    }, void 0, false, {
-                                        fileName: "src/pages/signup/signup.js",
-                                        lineNumber: 30,
-                                        columnNumber: 107
-                                    }, undefined)
-                                }, void 0, false, {
-                                    fileName: "src/pages/signup/signup.js",
-                                    lineNumber: 30,
-                                    columnNumber: 77
-                                }, undefined)
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                onClick: handleClick,
+                                className: "login",
+                                children: "Login"
                             }, void 0, false, {
                                 fileName: "src/pages/signup/signup.js",
-                                lineNumber: 30,
+                                lineNumber: 38,
                                 columnNumber: 21
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/pages/signup/signup.js",
-                        lineNumber: 28,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        type: "text",
-                        placeholder: "Username",
-                        onChange: (e)=>setEmail(e.target.value)
-                    }, void 0, false, {
-                        fileName: "src/pages/signup/signup.js",
-                        lineNumber: 32,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        type: "password",
-                        placeholder: "Password",
-                        onChange: (e)=>setPassword(e.target.value)
-                    }, void 0, false, {
-                        fileName: "src/pages/signup/signup.js",
-                        lineNumber: 33,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        onClick: handleClick,
-                        children: "Signup"
-                    }, void 0, false, {
-                        fileName: "src/pages/signup/signup.js",
-                        lineNumber: 34,
+                        lineNumber: 36,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/signup/signup.js",
-                lineNumber: 27,
+                lineNumber: 30,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/signup/signup.js",
-        lineNumber: 25,
+        lineNumber: 28,
         columnNumber: 9
     }, undefined);
 };
-_s(Signup, "3B3pqDcVnkT+z/sPK6Z9zQsLP+s=");
+_s(Signup, "rIjyA2uJXTJXGlQGcq/HSho2Mo8=", false, function() {
+    return [
+        (0, _reactRouterDom.useNavigate)
+    ];
+});
 _c = Signup;
 exports.default = Signup;
 var _c;
@@ -35009,161 +35064,6 @@ $RefreshReg$(_c, "Signup");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../common/Navbar/navbar":"2Xn2v","react":"21dqq","./signup.css":"larrx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"larrx":[function() {},{}],"dnRSK":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$e19b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$e19b.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _pointsContext = require("../../context/pointsContext");
-var _pointsContextDefault = parcelHelpers.interopDefault(_pointsContext);
-var _navbar = require("../common/Navbar/navbar");
-var _navbarDefault = parcelHelpers.interopDefault(_navbar);
-var _react = require("react");
-var _loginCss = require("./login.css");
-var _s = $RefreshSig$();
-const Login = ()=>{
-    _s();
-    const { login } = (0, _react.useContext)((0, _pointsContextDefault.default));
-    const [email, setEmail] = (0, _react.useState)("");
-    const [password, setPassword] = (0, _react.useState)("");
-    const handleClick = async ()=>{
-        if (!email && !password) return;
-        const res = await fetch(`${undefined}/api/v1/auth/login`, {
-            headers: {
-                "Content-Type": "application/json"
-            },
-            method: "POST",
-            body: JSON.stringify({
-                email,
-                password
-            })
-        });
-        const data = await res.json();
-        if (data.status === "success") {
-            localStorage.setItem("authorization", data.data.token);
-            login();
-        }
-    };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default), {
-                page: "login"
-            }, void 0, false, {
-                fileName: "src/pages/login/login.js",
-                lineNumber: 31,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                class: "login-box",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        class: "social-container",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                href: "https://accounts.google.com/",
-                                class: "social",
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                    class: "fab fa-google-plus-g",
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                        src: "https://www.google.com/images/branding/product/1x/gmail_48dp.png"
-                                    }, void 0, false, {
-                                        fileName: "src/pages/login/login.js",
-                                        lineNumber: 34,
-                                        columnNumber: 107
-                                    }, undefined)
-                                }, void 0, false, {
-                                    fileName: "src/pages/login/login.js",
-                                    lineNumber: 34,
-                                    columnNumber: 75
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/pages/login/login.js",
-                                lineNumber: 34,
-                                columnNumber: 21
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                href: "https://www.linkedin.com/login",
-                                class: "social",
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                    class: "fab fa-linkedin-in",
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                        src: "https://th.bing.com/th/id/R.14f8d0d8ea255a03471032d79087fdf0?rik=Jcph23UZL08iCA&riu=http%3a%2f%2f1000logos.net%2fwp-content%2fuploads%2f2017%2f03%2fColor-of-the-LinkedIn-Logo.jpg&ehk=hT5Ibkg%2fFPa%2f7TPm%2fs2TP8Fxdd7ySQQBuZmn88xh5j0%3d&risl=&pid=ImgRaw&r=0"
-                                    }, void 0, false, {
-                                        fileName: "src/pages/login/login.js",
-                                        lineNumber: 35,
-                                        columnNumber: 107
-                                    }, undefined)
-                                }, void 0, false, {
-                                    fileName: "src/pages/login/login.js",
-                                    lineNumber: 35,
-                                    columnNumber: 77
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/pages/login/login.js",
-                                lineNumber: 35,
-                                columnNumber: 21
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/pages/login/login.js",
-                        lineNumber: 33,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        type: "text",
-                        placeholder: "Username",
-                        onChange: (e)=>setEmail(e.target.value)
-                    }, void 0, false, {
-                        fileName: "src/pages/login/login.js",
-                        lineNumber: 37,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        type: "password",
-                        placeholder: "Password",
-                        onChange: (e)=>setPassword(e.target.value)
-                    }, void 0, false, {
-                        fileName: "src/pages/login/login.js",
-                        lineNumber: 38,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        onClick: handleClick,
-                        children: "Login"
-                    }, void 0, false, {
-                        fileName: "src/pages/login/login.js",
-                        lineNumber: 39,
-                        columnNumber: 17
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/pages/login/login.js",
-                lineNumber: 32,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/pages/login/login.js",
-        lineNumber: 30,
-        columnNumber: 9
-    }, undefined);
-};
-_s(Login, "wppFossD1OI4CrCtdS42cKFeeqw=");
-_c = Login;
-exports.default = Login;
-var _c;
-$RefreshReg$(_c, "Login");
-
-  $parcel$ReactRefreshHelpers$e19b.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","../../context/pointsContext":"3EBhw","../common/Navbar/navbar":"2Xn2v","react":"21dqq","./login.css":"d6Te3","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"d6Te3":[function() {},{}]},["hPIHA","1xC6H","igcvL"], "igcvL", "parcelRequire4ba1")
+},{"react/jsx-dev-runtime":"iTorj","../common/Navbar/navbar":"2Xn2v","react":"21dqq","./signup.css":"larrx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe"}],"larrx":[function() {},{}]},["hPIHA","1xC6H","igcvL"], "igcvL", "parcelRequire4ba1")
 
 //# sourceMappingURL=index.5baa4167.js.map

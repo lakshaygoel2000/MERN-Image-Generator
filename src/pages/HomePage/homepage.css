@@ -1,30 +1,63 @@
-.content{
-    text-align: center;
-    color: rgb(48, 48, 48);
-    display: block;
-    width: 40vw;
+.content {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
     padding: 10px;
     font-size: larger;
     position: absolute;
-	top: 20%;
-	left: 30%;
-    
-    h1{
-        margin-bottom: 10px;
-    }
-    p{
-        margin: 20px;
-    }
-    button{
-        font-size: medium;
-        margin-top: 10px;
-        width: 30vw;
-        background-color: rgb(166, 231, 27);
-        text-decoration-line: none;
-        font-weight: bold;
-        
-    }
-    button:hover{
-        background-color: rgb(255, 255, 18);
-    }
+    bottom: 10%;
+    left: 5%;
+    text-decoration: none;
+
+}
+
+.content h1 {
+    margin-bottom: 10px;
+    font-size: 3rem;
+}
+
+.content p {
+    margin: 2px 0 20px 0;
+    font-size: medium;
+    font-weight: 300;
+}
+
+.content .content-btn {
+    padding: 20px 30px;
+    font-size: medium;
+    margin-top: 10px;
+    background-color: rgb(68, 68, 68);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.content .btn-text {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(220, 220, 220);
+}
+
+.content button:hover {
+    background-color: rgb(27, 27, 27);
+}
+
+.background-img {
+    padding: 10px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.background-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 40%;    
 }

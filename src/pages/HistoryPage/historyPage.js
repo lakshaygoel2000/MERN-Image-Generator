@@ -22,18 +22,17 @@ const HistoryPage = () => {
 
   return (
     <div>
-      <Navbar page="history" />
-        {searchHistory.length > 0 && (
-            <div className="history-clear-button">
-            <button onClick={handleClearHistory}>Clear History</button>
-          </div>
-        )}
-        
+      <Navbar page="history" />       
         <div className="history-main-container">
             {searchHistory.map((item, index) => (
             <HistoryCard key={index} item={item} />
             ))}
         </div>
+         {searchHistory.length > 0 && (
+            <div className="history-clear-button">
+            <button onClick={handleClearHistory}>Clear History</button>
+          </div>
+        )}
     </div>
   );
 };
